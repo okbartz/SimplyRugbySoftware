@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.CoachMemberMenuController">
+   <children>
+      <Button fx:id="viewmemberBtn" layoutX="57.0" layoutY="125.0" mnemonicParsing="false" onAction="#openViewMember" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View Members" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
+      <Button fx:id="AddMemberBtn" layoutX="57.0" layoutY="163.0" mnemonicParsing="false" onAction="#openAddMember" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Add Member" />
+      <TextArea fx:id="lstBox" layoutX="229.0" layoutY="83.0" prefHeight="200.0" prefWidth="343.0" />
+      <Pane fx:id="ViewMemberPane1" layoutX="43.0" layoutY="283.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Text fx:id="RemoveORViewText" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the memberid of the member you want to see" />
+            <TextField fx:id="ViewMemberInput" layoutX="169.0" layoutY="45.0" />
+            <Button fx:id="FindMemberBtn" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#ViewMembers" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+         </children>
+      </Pane>
+      <Pane fx:id="AddMemberPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the member you want to add" />
+            <TextField fx:id="InputFirstName" layoutX="35.0" layoutY="66.0" />
+            <Button fx:id="addMemberBtn" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#AddMember" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputSurname" layoutX="35.0" layoutY="101.0" />
+            <TextField fx:id="InputEmail" layoutX="35.0" layoutY="165.0" />
+            <Text fx:id="welcomeText11112" layoutX="196.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name EX: jim" />
+            <Text fx:id="welcomeText1111112" layoutX="195.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname EX: jones" />
+            <Text fx:id="welcomeText11111121" layoutX="195.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: F(female) or M(male)" />
+            <Text fx:id="welcomeText111111121" layoutX="195.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email EX: example@email.com" />
+            <Text fx:id="welcomeText1111111121" layoutX="212.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+            <TextField fx:id="InputHomeAddress" layoutX="35.0" layoutY="194.0" />
+            <Text fx:id="welcomeText111111112" layoutX="195.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Address EX: G53 3QD" />
+            <DatePicker fx:id="InputAge" layoutX="35.0" layoutY="222.0" />
+            <ChoiceBox fx:id="InputSex" layoutX="34.0" layoutY="135.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Button fx:id="EditMemberBtn" layoutX="57.0" layoutY="200.0" mnemonicParsing="false" onAction="#openEditMember" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Edit Member" />
+      <Button fx:id="RemoveMemberBtn" layoutX="57.0" layoutY="237.0" mnemonicParsing="false" onAction="#openRemoveMember" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Remove Member" />
+      <Pane fx:id="RemoveMemberPane" layoutX="53.0" layoutY="293.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Text fx:id="RemoveORViewText1" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the memberid of the member you want to remove" />
+            <TextField fx:id="RemoveMemberInput" layoutX="169.0" layoutY="45.0" />
+            <Button fx:id="RemoveMemberBtn1" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#RemoveMembers" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+         </children>
+      </Pane>
+      <Text fx:id="errorText" fill="RED" layoutX="201.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Errors will be shown with this text" />
+      <Pane fx:id="EditMemberPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText1111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the member you want to edit" />
+            <TextField fx:id="InputFirstName1" layoutX="35.0" layoutY="66.0" />
+            <Button fx:id="addMemberBtn1" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#EditMember" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputSurname1" layoutX="35.0" layoutY="101.0" />
+            <TextField fx:id="InputEmail1" layoutX="35.0" layoutY="165.0" />
+            <Text fx:id="welcomeText111121" layoutX="196.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name EX: jim" />
+            <Text fx:id="welcomeText11111121" layoutX="195.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname EX: jones" />
+            <Text fx:id="welcomeText111111211" layoutX="195.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: F(female) or M(male)" />
+            <Text fx:id="welcomeText1111111211" layoutX="195.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email EX: example@email.com" />
+            <Text fx:id="welcomeText11111111211" layoutX="212.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+            <TextField fx:id="InputHomeAddress1" layoutX="35.0" layoutY="194.0" />
+            <Text fx:id="welcomeText1111111121" layoutX="195.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home Address EX: G53 3QD" />
+            <DatePicker fx:id="InputAge1" layoutX="35.0" layoutY="222.0" />
+            <ChoiceBox fx:id="InputSex1" layoutX="34.0" layoutY="135.0" prefWidth="150.0" />
+            <TextField fx:id="InputMemberID1" layoutX="35.0" layoutY="34.0" onKeyReleased="#SetEditInputs" />
+            <Text fx:id="welcomeText1111211" layoutX="196.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID EX: 1,2" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

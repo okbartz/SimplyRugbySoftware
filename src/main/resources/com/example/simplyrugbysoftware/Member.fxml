@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.MemberController">
+   <children>
+      <Button fx:id="sessionBtn" layoutX="57.0" layoutY="125.0" mnemonicParsing="false" onAction="#ViewSesh" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View Sessions" />
+      <Button fx:id="fixtureBtn" layoutX="57.0" layoutY="169.0" mnemonicParsing="false" onAction="#ViewFixt" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View Fixtures" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
+      <Text fx:id="welcomeText" layoutX="200.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, " />
+      <Button fx:id="consentBtn" layoutX="57.0" layoutY="217.0" mnemonicParsing="false" onAction="#openConsent" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Fill Player Consent" />
+      <TextArea fx:id="lstBox" layoutX="229.0" layoutY="83.0" prefHeight="200.0" prefWidth="343.0" />
+      <Pane fx:id="consentPane" layoutX="43.0" layoutY="288.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Button fx:id="acceptconsentBtn" layoutX="204.0" layoutY="54.0" mnemonicParsing="false" onAction="#setConsent" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Accept Consent" />
+            <Text fx:id="welcomeText1" layoutX="77.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you are sure that you want to fill the consent press the button accept consent" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

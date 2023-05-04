@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.CoachSquadMenuController">
+   <children>
+      <Button fx:id="viewSquadBtn" layoutX="57.0" layoutY="125.0" mnemonicParsing="false" onAction="#openViewSquad" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View Squad" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
+      <Button fx:id="AddSquadBtn" layoutX="57.0" layoutY="163.0" mnemonicParsing="false" onAction="#openAddSquad" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Add Squad" />
+      <TextArea fx:id="lstBox" layoutX="229.0" layoutY="83.0" prefHeight="200.0" prefWidth="343.0" />
+      <Pane fx:id="ViewSquadPane1" layoutX="43.0" layoutY="283.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Text fx:id="RemoveORViewText" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the teamid of the Squad you want to see" />
+            <TextField fx:id="ViewSquadInput" layoutX="169.0" layoutY="45.0" />
+            <Button fx:id="FindSquadBtn" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#ViewSquad" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+         </children>
+      </Pane>
+      <Pane fx:id="AddSquadPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the Squad you want to add" />
+            <Button fx:id="addSquadBtn" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#AddSquad" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputTeamID" layoutX="35.0" layoutY="101.0" />
+            <Text fx:id="welcomeText1111112" layoutX="195.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeamID" />
+            <Text fx:id="welcomeText11111111212121" layoutX="196.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AgeGrade" />
+            <ChoiceBox fx:id="InputAgegrade" layoutX="34.0" layoutY="135.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Button fx:id="EditSquadBtn" layoutX="57.0" layoutY="200.0" mnemonicParsing="false" onAction="#openEditSquad" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Edit Squad" />
+      <Text fx:id="errorText" fill="RED" layoutX="201.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Errors will be shown with this text" />
+      <Pane fx:id="EditSquadPane" layoutX="212.0" layoutY="67.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText1111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the Squad you want to Edit" />
+            <Button fx:id="EditSquadBtn" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#EditSquad" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputTeamID1" layoutX="35.0" layoutY="101.0" />
+            <Text fx:id="welcomeText11111121" layoutX="195.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeamID" />
+            <Text fx:id="welcomeText111111112121211" layoutX="196.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AgeGrade" />
+            <ChoiceBox fx:id="InputAgegrade1" layoutX="34.0" layoutY="135.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Button fx:id="EditSquadBtn1" layoutX="57.0" layoutY="235.0" mnemonicParsing="false" onAction="#openRemoveSquad" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Delete Squad" />
+      <Pane fx:id="RemoveSquadPane" layoutX="53.0" layoutY="293.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Text fx:id="RemoveORViewText1" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the teamid of the Squad you want to delete" />
+            <TextField fx:id="RemoveSquadInput" layoutX="169.0" layoutY="45.0" />
+            <Button fx:id="RemoveSquadBtn1" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#RemoveSquad" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

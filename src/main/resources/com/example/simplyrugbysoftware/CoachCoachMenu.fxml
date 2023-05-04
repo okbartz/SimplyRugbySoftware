@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.CoachCoachMenuController">
+   <children>
+      <Button fx:id="viewcoachBtn" layoutX="57.0" layoutY="125.0" mnemonicParsing="false" onAction="#openViewCoach" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View Coach" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
+      <Button fx:id="AddCoachBtn" layoutX="57.0" layoutY="163.0" mnemonicParsing="false" onAction="#openAddCoach" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Add Coach" />
+      <TextArea fx:id="lstBox" layoutX="229.0" layoutY="83.0" prefHeight="200.0" prefWidth="343.0" />
+      <Pane fx:id="ViewCoachPane1" layoutX="43.0" layoutY="283.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Text fx:id="RemoveORViewText" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the memberid of the coach you want to see" />
+            <TextField fx:id="ViewCoachInput" layoutX="169.0" layoutY="45.0" />
+            <Button fx:id="FindCoachBtn" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#ViewCoach" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+         </children>
+      </Pane>
+      <Pane fx:id="AddCoachPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the Coach you want to add" />
+            <Button fx:id="addCoachBtn" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#AddCoach" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputMemberID" layoutX="35.0" layoutY="101.0" />
+            <Text fx:id="welcomeText1111112" layoutX="195.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID" />
+            <Text fx:id="welcomeText11111111212121" layoutX="196.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team ID" />
+            <TextField fx:id="InputTeamAssigned" layoutX="35.0" layoutY="135.0" />
+         </children>
+      </Pane>
+      <Button fx:id="EditCoachBtn" layoutX="57.0" layoutY="200.0" mnemonicParsing="false" onAction="#openEditCoach" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Edit Coach" />
+      <Text fx:id="errorText" fill="RED" layoutX="201.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Errors will be shown with this text" />
+      <Pane fx:id="EditCoachPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText1111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the Coach you want to Edit" />
+            <TextField fx:id="InputCoachID1" editable="false" layoutX="35.0" layoutY="98.0" />
+            <Button fx:id="addMemberBtn1" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#EditCoach" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputMemberID1" layoutX="35.0" layoutY="65.0" onKeyReleased="#SetEditInputs" />
+            <Text fx:id="welcomeText111121" layoutX="196.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coach ID" />
+            <Text fx:id="welcomeText11111121" layoutX="195.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID" />
+            <Text fx:id="welcomeText111111112121211" layoutX="196.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Team ID" />
+            <TextField fx:id="InputTeamAssigned1" layoutX="35.0" layoutY="135.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

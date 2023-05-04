@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.CoachPlayerMenuController">
+   <children>
+      <PieChart fx:id="PlayerDataPie" layoutX="229.0" layoutY="34.0" prefHeight="218.0" prefWidth="343.0" />
+      <TextArea fx:id="lstBox" layoutX="229.0" layoutY="248.0" prefHeight="55.0" prefWidth="343.0" />
+      <Button fx:id="viewPlayerBtn" layoutX="57.0" layoutY="125.0" mnemonicParsing="false" onAction="#openViewPlayer" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View Players" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
+      <Button fx:id="AddPlayerBtn" layoutX="57.0" layoutY="163.0" mnemonicParsing="false" onAction="#openAddPlayer" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Add Player" />
+      <Pane fx:id="ViewPlayerPane1" layoutX="43.0" layoutY="283.0" prefHeight="108.0" prefWidth="536.0" visible="false">
+         <children>
+            <Text fx:id="RemoveORViewText" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the Memberid of the Player you want to see" />
+            <TextField fx:id="ViewPlayerInput" layoutX="169.0" layoutY="45.0" />
+            <Button fx:id="FindPlayerBtn" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#ViewMembers" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+         </children>
+      </Pane>
+      <Pane fx:id="AddPlayerPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the Player you want to add" />
+            <TextField fx:id="InputMemberID" layoutX="35.0" layoutY="66.0" />
+            <Button fx:id="addPlayerBtn" layoutX="69.0" layoutY="253.0" mnemonicParsing="false" onAction="#AddPlayer" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputFieldPosition" layoutX="35.0" layoutY="101.0" />
+            <TextField fx:id="InputTeamID" layoutX="35.0" layoutY="135.0" />
+            <Text fx:id="welcomeText11112" layoutX="196.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MemberID" />
+            <Text fx:id="welcomeText1111112" layoutX="195.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FieldPosition" />
+            <Text fx:id="welcomeText11111121" layoutX="195.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeamID" />
+         </children>
+      </Pane>
+      <Button fx:id="EditPlayerBtn" layoutX="57.0" layoutY="200.0" mnemonicParsing="false" onAction="#openEditPlayer" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Edit Player" />
+      <Text fx:id="errorText" fill="RED" layoutX="78.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Errors will be shown with this text" />
+      <Pane fx:id="EditPlayerPane" layoutX="212.0" layoutY="60.0" prefHeight="332.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">
+         <children>
+            <Text fx:id="welcomeText1111" layoutX="23.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the details for the Player you want to edit" />
+            <TextField fx:id="InputMemberID1" layoutX="109.0" layoutY="34.0" onKeyReleased="#SetEditInputs" />
+            <Button fx:id="addPlayerBtn1" layoutX="14.0" layoutY="153.0" mnemonicParsing="false" onAction="#EditPlayer" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <TextField fx:id="InputFieldPosition1" layoutX="109.0" layoutY="69.0" />
+            <TextField fx:id="InputTeamID1" layoutX="109.0" layoutY="103.0" />
+            <Text fx:id="welcomeText111121" layoutX="270.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MemberID" />
+            <Text fx:id="welcomeText11111121" layoutX="269.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FieldPosition" />
+            <Text fx:id="welcomeText111111211" layoutX="269.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TeamID" />
+            <TextField fx:id="InputPassing" layoutX="109.0" layoutY="135.0" />
+            <Text fx:id="welcomeText1111112111" layoutX="269.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passing 0 - 20" />
+            <TextField fx:id="InputCatching" layoutX="110.0" layoutY="166.0" />
+            <Text fx:id="welcomeText11111121111" layoutX="270.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catching 0 - 20" />
+            <TextField fx:id="InputRunning" layoutX="110.0" layoutY="197.0" />
+            <Text fx:id="welcomeText111111211111" layoutX="270.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Running 0 - 20" />
+            <TextField fx:id="InputTackling" layoutX="110.0" layoutY="228.0" />
+            <Text fx:id="welcomeText1111112111111" layoutX="270.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tackling 0 - 20" />
+            <TextField fx:id="InputRucking" layoutX="110.0" layoutY="259.0" />
+            <Text fx:id="welcomeText11111121111111" layoutX="270.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rucking 0 - 20" />
+            <TextField fx:id="InputConsent" editable="false" layoutX="111.0" layoutY="293.0" />
+            <Text fx:id="welcomeText111111211111111" layoutX="272.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consent" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

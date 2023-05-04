@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.CoachController">
+   <children>
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
+      <Text fx:id="welcomeText" layoutX="272.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, " />
+      <Button fx:id="openPlayerMenu" layoutX="213.0" layoutY="152.0" mnemonicParsing="false" onAction="#SwitchScenePlayer" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Player" />
+      <Button fx:id="openCoachMenu" layoutX="213.0" layoutY="188.0" mnemonicParsing="false" onAction="#SwitchSceneCoach" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Coach" />
+      <Button fx:id="openSessionsMenu" layoutX="213.0" layoutY="260.0" mnemonicParsing="false" onAction="#SwitchSceneSession" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Sessions" />
+      <Button fx:id="openMemberMenu" layoutX="213.0" layoutY="115.0" mnemonicParsing="false" onAction="#SwitchSceneMember" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Member" />
+      <Button fx:id="openFixturesMenu" layoutX="213.0" layoutY="293.0" mnemonicParsing="false" onAction="#SwitchSceneFixture" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Fixtures" />
+      <Button fx:id="openSquadMenu1" layoutX="214.0" layoutY="224.0" mnemonicParsing="false" onAction="#SwitchSceneSquad" prefHeight="27.0" prefWidth="173.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Squad" />
+   </children>
+</AnchorPane>
