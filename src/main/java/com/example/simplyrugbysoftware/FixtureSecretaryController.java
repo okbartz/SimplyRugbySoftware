@@ -137,6 +137,7 @@ public class FixtureSecretaryController {
     String FixtId = (databaseController.ViewPlayerFixtures(Integer.parseInt(fixtureTeamID.getText())));
     System.out.println(FixtId);
     lstBox.setText(FixtId);
+    errorText.setText("");
     }catch (Exception e){
 
         errorText.setText("Make sure that the ID is a number ex: 0,1,2");
@@ -159,9 +160,10 @@ public class FixtureSecretaryController {
             System.out.println(fixture);
             databaseController.AddFixture(fixture);
             AddFixturePane.setVisible(false);
+            errorText.setText("");
         }
         catch (Exception e){
-            errorText.setText("Make sure that fields contain the correct input!");
+            errorText.setText(e.getMessage());
         }
 
     }
@@ -172,7 +174,7 @@ public class FixtureSecretaryController {
             String MemberIdtext = String.valueOf(databaseController.ViewMember(Integer.parseInt(playerID1.getText())));
             System.out.println(MemberIdtext);
             lstBox.setText(MemberIdtext);
-
+            errorText.setText("");
 
         }catch (Exception e){
 

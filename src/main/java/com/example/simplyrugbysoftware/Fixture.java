@@ -27,7 +27,7 @@ public class Fixture {
 
     }
 
-
+// TODO: 05/05/2023 change the expressions
 
     public int getTeamID() {
         return TeamID;
@@ -40,10 +40,10 @@ public class Fixture {
             if (teamID > 0){
             TeamID = teamID;
             } else {
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the team id was not a integer!!");
+            throw new Exception("the team id cannot be less than 1");
         }
 
     }
@@ -56,9 +56,9 @@ public class Fixture {
         try {
             if (fixtureID > 0) {
                 FixtureID = fixtureID;
-            } else { throw new Exception("the fixture id was not valid"); }
+            } else { throw new Exception(); }
         }catch (Exception e){
-            throw new Exception("the fixture id was not a integer!!");
+            throw new Exception("the fixture id was not valid");
         }
 
 
@@ -76,10 +76,10 @@ public class Fixture {
             TimeLimit = timeLimit;
             }
             else {
-                throw new Exception("the time limit is between 30 to 120");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the time was not a integer!!");
+            throw new Exception("the time limit has to be between 30 to 120");
         }
 
     }
@@ -93,11 +93,11 @@ public class Fixture {
         try {
 
             if (playingField.matches("\\D*")){
-
-
             PlayingField = playingField.toUpperCase();}
+            else {throw new Exception();}
+
         }catch (Exception e){
-            throw new Exception("the Playing Field was not a string!!");
+            throw new Exception("the Playing Field has to be only letters");
         }
 
     }
@@ -111,9 +111,9 @@ public class Fixture {
         try {
 
             if (date.matches(DateRegex)){
-                Date = date;} else{ new Exception("the date did not match!!");}
+                Date = date;} else{ throw new Exception();}
         }catch (Exception e){
-            throw new Exception("the date field was not a string!!");
+            throw new Exception("the date is formatted incorrectly");
         }
 
 
@@ -128,10 +128,10 @@ public class Fixture {
 
             skills.toUpperCase();
             if (skills.matches("\\D*")){
-            Skills = skills;} else {throw new Exception("the activity field did not match!!");}
+            Skills = skills;} else {throw new Exception();}
         }catch (Exception e){
 
-            throw new Exception("the Skills field was not a string!!");
+            throw new Exception("the skills field has to be only letters");
         }
 
 

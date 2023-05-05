@@ -60,5 +60,6 @@
             <Text fx:id="welcomeText111111211111111" layoutX="272.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consent" />
          </children>
       </Pane>
+      <Button fx:id="ViewAllBtn" layoutX="57.0" layoutY="235.0" mnemonicParsing="false" onAction="#ViewAll" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View All" />
    </children>
 </AnchorPane>

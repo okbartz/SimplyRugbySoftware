@@ -208,6 +208,8 @@ public class CoachMemberMenuController {
             System.out.println(member);
             databaseController.AddMember(member);
             AddMemberPane.setVisible(false);
+
+            errorText.setText("");
         }catch (Exception e){
 
             errorText.setText(e.getMessage());
@@ -236,6 +238,26 @@ public class CoachMemberMenuController {
         }
 
     }
+
+    public void ViewAll(ActionEvent event) throws IOException {
+
+
+        try{
+            String AllText = String.valueOf(databaseController.ViewAllMembers());
+            System.out.println(AllText);
+            lstBox.setText(AllText);
+            errorText.setText("");
+
+        }catch (Exception e){
+
+            errorText.setText("There is no members");
+
+        }
+
+
+    }
+
+
     public void ViewMembers(ActionEvent event) throws IOException {
 
         try{

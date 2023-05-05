@@ -51,5 +51,6 @@
             <Button fx:id="RemoveSquadBtn1" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#RemoveSquad" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
          </children>
       </Pane>
+      <Button fx:id="ViewAllBtn" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#ViewAll" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View All" />
    </children>
 </AnchorPane>

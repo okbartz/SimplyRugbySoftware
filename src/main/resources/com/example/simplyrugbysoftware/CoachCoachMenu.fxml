@@ -44,5 +44,6 @@
             <TextField fx:id="InputTeamAssigned1" layoutX="35.0" layoutY="135.0" />
          </children>
       </Pane>
+      <Button fx:id="ViewAllBtn" layoutX="57.0" layoutY="234.0" mnemonicParsing="false" onAction="#ViewAll" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View All" />
    </children>
 </AnchorPane>

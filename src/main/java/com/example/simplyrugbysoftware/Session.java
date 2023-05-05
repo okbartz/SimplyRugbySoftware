@@ -11,6 +11,7 @@ public class Session {
     private String Activity;
     static int NextID = 0;
 
+    // TODO: 05/05/2023 change the exeptions
     public Session(int teamID, int sessionID, int timeLimit, String date, String activity) {
         try{
         setTeamID(teamID);
@@ -33,9 +34,9 @@ public class Session {
         try {
             if (teamID > 0) {
                 TeamID = teamID;
-            } else {throw new Exception("the team id was not valid!"); }
+            } else {throw new Exception(); }
         }catch (Exception e){
-            throw new Exception("the team id was not a integer!!");
+            throw new Exception("the team id was not valid!");
         }
 
 
@@ -51,9 +52,9 @@ public class Session {
         try {
             if (sessionID > 0) {
                 SessionID = sessionID;
-            } else {throw new Exception("the session id was not valid!"); }
+            } else {throw new Exception(); }
         }catch (Exception e){
-            throw new Exception("the session id was not a integer!!");
+            throw new Exception("the session id was not valid!");
         }
 
 
@@ -71,10 +72,10 @@ public class Session {
                 TimeLimit = timeLimit;
             }
             else {
-                throw new Exception("the time limit is between 30 to 120");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the time was not a integer!!");
+            throw new Exception("the time limit is between 30 to 120");
         }
 
 
@@ -89,9 +90,9 @@ public class Session {
         try {
 
             if (date.matches(DateRegex)){
-                Date = date;} else{ new Exception("the date did not match!!");}
+                Date = date;} else{ new Exception();}
         }catch (Exception e){
-            throw new Exception("the date field was not a string!!");
+            throw new Exception("the date is formatted incorrectly");
         }
 
     }
@@ -107,10 +108,10 @@ public class Session {
 
             activity.toUpperCase();
             if (activity.matches("\\D*")){
-                Activity = activity;} else {throw new Exception("the activity field did not match!!");}
+                Activity = activity;} else {throw new Exception();}
         }catch (Exception e){
 
-            throw new Exception("the Activity field was not a string!!");
+            throw new Exception("the activity field has to be only letters");
         }
     }
 

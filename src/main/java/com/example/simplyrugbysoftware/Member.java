@@ -134,7 +134,7 @@ public class Member {
             }
         }catch (Exception e){
 
-            throw new Exception("make sure that the address field is a uk postcode and is formatted correctly ex: CW3 9SS");
+            throw new Exception("make sure that the address field is a uk postcode");
         }
     }
 

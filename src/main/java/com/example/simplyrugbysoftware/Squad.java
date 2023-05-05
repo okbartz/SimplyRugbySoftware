@@ -20,7 +20,7 @@ public class Squad {
 
     }
 
-    // TODO: 05/05/2023 change the exeptions 
+
 
     public int getTeamID() {
         return TeamID;
@@ -28,13 +28,13 @@ public class Squad {
 
     public void setTeamID(int teamID) throws Exception{
         try {
-            if (teamID > 0){
+            if (teamID >= 0){
                 TeamID = teamID;
             } else {
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the team id was not a integer!!");
+            throw new Exception("the team id cannot be less than 1");
         }
     }
 

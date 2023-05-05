@@ -175,6 +175,25 @@ public class CoachCoachMenuController {
 
     }
 
+    public void ViewAll(ActionEvent event) throws IOException {
+
+
+            try{
+                String AllText = String.valueOf(databaseController.ViewAllCoaches());
+                System.out.println(AllText);
+                lstBox.setText(AllText);
+                errorText.setText("");
+
+            }catch (Exception e){
+
+                errorText.setText("There is no coaches");
+
+            }
+
+
+    }
+
+
 
     public void AddCoach(ActionEvent event) throws IOException {
 
@@ -190,7 +209,7 @@ public class CoachCoachMenuController {
             errorText.setText("");
         }catch (Exception e){
 
-            errorText.setText("Make sure that fields are correct");
+            errorText.setText(e.getMessage());
 
         }
 
@@ -207,7 +226,7 @@ public class CoachCoachMenuController {
             errorText.setText("");
         }catch (Exception e){
 
-        errorText.setText("Make sure that fields are correct");
+        errorText.setText(e.getMessage());
 
         }
 

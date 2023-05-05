@@ -154,7 +154,7 @@ public class CoachSquadMenuController {
             errorText.setText("");
         }catch (Exception e){
 
-            errorText.setText("Make sure that fields are correct");
+            errorText.setText(e.getMessage());
 
         }
 
@@ -171,7 +171,7 @@ public class CoachSquadMenuController {
             errorText.setText("");
         }catch (Exception e){
 
-        errorText.setText("Make sure that fields are correct");
+        errorText.setText(e.getMessage());
 
         }
 
@@ -189,6 +189,24 @@ public class CoachSquadMenuController {
         errorText.setText("Make sure that the ID is a number ex: 0,1,2");
 
         }
+
+    }
+
+    public void ViewAll(ActionEvent event) throws IOException {
+
+
+        try{
+            String AllText = String.valueOf(databaseController.ViewAllSquad());
+            System.out.println(AllText);
+            lstBox.setText(AllText);
+            errorText.setText("");
+
+        }catch (Exception e){
+
+            errorText.setText("There is no members");
+
+        }
+
 
     }
 

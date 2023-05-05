@@ -153,7 +153,7 @@ public class CoachSessionsMenuController {
             AddSessionPane.setVisible(false);
         }catch (Exception e){
 
-            errorText.setText("Make sure that fields are correct");
+            errorText.setText(e.getMessage());
 
         }
 
@@ -163,7 +163,7 @@ public class CoachSessionsMenuController {
     public void ViewSession(ActionEvent event) throws IOException {
 
         try{
-        String SessionIdtext = String.valueOf(databaseController.ViewSession(Integer.parseInt(ViewSessionInput.getText())));
+        String SessionIdtext = String.valueOf(databaseController.ViewPlayersSession(Integer.parseInt(ViewSessionInput.getText())));
         System.out.println(SessionIdtext);
         lstBox.setText(SessionIdtext);
         errorText.setText("");

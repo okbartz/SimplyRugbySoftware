@@ -48,10 +48,10 @@ public class Player {
 
             fieldPosition.toUpperCase();
             if (fieldPosition.matches("\\D*")){
-                FieldPosition = fieldPosition;} else {throw new Exception("the Field Position did not match!!");}
+                FieldPosition = fieldPosition;} else {throw new Exception();}
         }catch (Exception e){
 
-            throw new Exception("the Field Position was not a string!!");
+            throw new Exception("the Field Position can only be letters!!");
         }
 
 
@@ -67,11 +67,11 @@ public class Player {
                 MemberID = memberID;
             } else {
 
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the member id was not a integer!!");
+            throw new Exception("the member id cannot be less than 1");
         }
     }
 
@@ -84,10 +84,10 @@ public class Player {
             if (teamID > 0){
                 TeamID = teamID;
             } else {
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the team id was not a integer!!");
+            throw new Exception("the team id cannot be less than 1");
         }
 
     }
@@ -105,11 +105,11 @@ public class Player {
                 Passing = passing;
             } else {
 
-                throw new Exception("the skill cannot be less than 0 and greater than 20");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the skill was not a int");
+            throw new Exception("the skill cannot be less than 0 and greater than 20");
         }
 
 
@@ -126,11 +126,11 @@ public class Player {
                 Catching = catching;
             } else {
 
-                throw new Exception("the skill cannot be less than 0 and greater than 20");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the skill was not a int");
+            throw new Exception("the skill cannot be less than 0 and greater than 20");
         }
 
 
@@ -147,11 +147,11 @@ public class Player {
                 Running = running;
             } else {
 
-                throw new Exception("the skill cannot be less than 0 and greater than 20");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the skill was not a int");
+            throw new Exception("the skill cannot be less than 0 and greater than 20");
         }
 
 
@@ -168,11 +168,11 @@ public class Player {
                 Tackling = tackling;
             } else {
 
-                throw new Exception("the skill cannot be less than 0 and greater than 20");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the skill was not a int");
+            throw new Exception("the skill cannot be less than 0 and greater than 20");
         }
 
 
@@ -189,11 +189,11 @@ public class Player {
                 Rucking = rucking;
             } else {
 
-                throw new Exception("the skill cannot be less than 0 and greater than 20");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the skill was not a int");
+            throw new Exception("the skill cannot be less than 0 and greater than 20");
         }
 
     }

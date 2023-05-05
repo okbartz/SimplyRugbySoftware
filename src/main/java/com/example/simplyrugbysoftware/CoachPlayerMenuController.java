@@ -171,7 +171,7 @@ public class CoachPlayerMenuController {
 
 
                 InputFieldPosition1.setText(player.getFieldPosition());
-                InputMemberID1.setText(String.valueOf(player.getMemberID()));
+
                 InputTeamID1.setText(String.valueOf(player.getTeamID()));
                 InputPassing.setText(String.valueOf(player.getPassing()));
                 InputCatching.setText(String.valueOf(player.getCatching()));
@@ -184,7 +184,7 @@ public class CoachPlayerMenuController {
             } else {
 
                 InputFieldPosition1.setText("");
-                InputMemberID1.setText("");
+
                 InputTeamID1.setText("");
                 InputPassing.setText("");
                 InputCatching.setText("");
@@ -236,7 +236,7 @@ public class CoachPlayerMenuController {
             errorText.setText("");
         }catch (Exception e){
 
-        errorText.setText("Make sure that fields are correct");
+        errorText.setText(e.getMessage());
 
         }
 
@@ -280,7 +280,23 @@ public class CoachPlayerMenuController {
 
     }
 
+    public void ViewAll(ActionEvent event) throws IOException {
 
+
+        try{
+            String AllText = String.valueOf(databaseController.ViewAllPlayers());
+            System.out.println(AllText);
+            lstBox.setText(AllText);
+            errorText.setText("");
+
+        }catch (Exception e){
+
+            errorText.setText("There is no players");
+
+        }
+
+
+    }
 
 
 

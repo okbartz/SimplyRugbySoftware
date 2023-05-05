@@ -70,5 +70,6 @@
             <Text fx:id="welcomeText1111211" layoutX="196.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID EX: 1,2" />
          </children>
       </Pane>
+      <Button fx:id="ViewAllBtn" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#ViewAll" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="View All" />
    </children>
 </AnchorPane>

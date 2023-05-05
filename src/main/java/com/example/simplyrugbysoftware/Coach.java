@@ -22,7 +22,7 @@ public class Coach {
 
     }
 
-    // TODO: 05/05/2023 change the exeptions
+
     public int getMemberID() {
         return MemberID;
     }
@@ -33,11 +33,11 @@ public class Coach {
                 MemberID = memberID;
             } else {
 
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the member id was not a integer!!");
+            throw new Exception("the member id cannot be less than 1");
         }
     }
 
@@ -52,10 +52,10 @@ public class Coach {
             if (teamAssigned > 0){
                 TeamAssigned = teamAssigned;
             } else {
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the team id was not a integer!!");
+            throw new Exception("the team id cannot be less than 1");
         }
 
     }
@@ -70,10 +70,10 @@ public class Coach {
             if (coachID >= 0){
                 CoachID = coachID;
             } else {
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the team id was not a integer!!");
+            throw new Exception("the coach id cannot be less than 1");
         }
     }
 

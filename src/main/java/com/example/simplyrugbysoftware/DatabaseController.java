@@ -211,6 +211,43 @@ public class DatabaseController {
 
     }
 
+    public String ViewAllMembers(){
+        Member member = new Member();
+        String MemberSetty ="";
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
+
+            PreparedStatement statement = connection.prepareStatement(("SELECT * FROM Member"));
+
+            ResultSet Memberset = statement.executeQuery();
+
+            try {
+
+
+                while (Memberset.next()) {
+
+                    member = new Member(Memberset.getString("fname"), Memberset.getString("sname"), Memberset.getString("sex"), Memberset.getString("email"), Memberset.getString("homeaddress"), Memberset.getInt("memberid"), Memberset.getString("dob"));
+
+                    MemberSetty = MemberSetty + "\n" + member;
+                }
+
+
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                statement.close();
+                connection.close();
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return MemberSetty;
+    }
+
 //    The following sections is for the methods relating to the player table
 
     public void AddPlayer(Player player) {
@@ -346,6 +383,48 @@ public class DatabaseController {
         return player;
     }
 
+    public String ViewAllPlayers(){
+        Player player = new Player();
+        String PlayerSetty ="";
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
+
+            PreparedStatement statement = connection.prepareStatement(("SELECT * FROM Player"));
+
+            ResultSet Playerset = statement.executeQuery();
+
+            try {
+
+                boolean myBool = false;
+                if (Playerset.getInt("consent") == 1){
+                    myBool = true;
+                }
+
+                while (Playerset.next()) {
+
+                    player = new Player(Playerset.getString("fieldposition"), Playerset.getInt("memberid"), Playerset.getInt("teamid"), Playerset.getInt("passing"), Playerset.getInt("catching"), Playerset.getInt("running"), Playerset.getInt("tackling"), Playerset.getInt("rucking"), myBool);
+
+                    PlayerSetty = PlayerSetty + "\n" + player;
+                }
+
+
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                statement.close();
+                connection.close();
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return PlayerSetty;
+    }
+
+
     //Coach methods section
     public void AddCoach(Coach coach) {
         try {
@@ -451,6 +530,43 @@ public class DatabaseController {
         }
 
 
+    }
+
+    public String ViewAllCoaches(){
+        Coach coach = new Coach();
+        String CoachSetty ="";
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
+
+            PreparedStatement statement = connection.prepareStatement(("SELECT * FROM Coach"));
+
+            ResultSet Coachset = statement.executeQuery();
+
+            try {
+
+
+                while (Coachset.next()) {
+
+                    coach = new Coach(Coachset.getInt("memberid"),Coachset.getInt("teamid"),Coachset.getInt("coachid"));
+
+                    CoachSetty = CoachSetty + "\n" + coach;
+                }
+
+
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                statement.close();
+                connection.close();
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return CoachSetty;
     }
 
 
@@ -632,6 +748,46 @@ public class DatabaseController {
             e.printStackTrace();
         }
 
+    }
+
+    public String ViewAllSquad(){
+        Squad squad = new Squad();
+        String SquadSety ="";
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
+
+            PreparedStatement statement = connection.prepareStatement(("SELECT * FROM Squad"));
+
+            ResultSet Squadset = statement.executeQuery();
+
+
+
+
+            try {
+
+
+                while (Squadset.next()) {
+
+                    squad = new Squad(Squadset.getInt("teamid"),Squadset.getString("agegrade"));
+
+                    SquadSety = SquadSety + "\n" + squad;
+                }
+
+
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } finally {
+                statement.close();
+                connection.close();
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return SquadSety;
     }
 
     // Section for the fixture methods
