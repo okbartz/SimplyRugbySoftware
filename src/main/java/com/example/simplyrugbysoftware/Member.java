@@ -45,11 +45,11 @@ public class Member {
             if (fname.matches("\\D*")){
                 Fname = fname;}
             else {
-                throw new Exception("the fname has to contain only letters");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the fname was not a string!!");
+            throw new Exception("the fname has to contain only letters");
         }
 
 
@@ -66,10 +66,10 @@ public class Member {
         if (sname.matches("\\D*")){
             Sname = sname;}
         else {
-            throw new Exception("the sname has to contain only letters");
+            throw new Exception();
         }
         } catch(Exception e){
-            throw new Exception("the sname was not a string!!");
+            throw new Exception("the sname has to contain only letters");
     }
    }
 
@@ -88,11 +88,11 @@ public class Member {
             sex.toUpperCase();
             if (sex.equals("M") || sex.equals("F")){
                 Sex = sex;} else {
-                throw new Exception("make sure that the field has either M(male) or F(female)");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the Sex field was not a string!!");
+            throw new Exception("make sure that the sex field has either M(male) or F(female)");
         }
     }
 
@@ -109,11 +109,11 @@ public class Member {
             if (email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$*")){
                 Email = email;} else {
 
-                throw new Exception("make sure that the field contains '@' and '.'");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the email field was not a string!!");
+            throw new Exception("make sure that the email contains '@' and '.'");
         }
 
 
@@ -130,11 +130,11 @@ public class Member {
             if (homeAddress.matches(ukAddressregex)){
                 HomeAddress = homeAddress;} else {
 
-                throw new Exception("make sure that the field contains is a uk postcode and is formatted correctly ex: CW3 9SS");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the address field was not a string!!");
+            throw new Exception("make sure that the address field is a uk postcode and is formatted correctly ex: CW3 9SS");
         }
     }
 
@@ -150,11 +150,11 @@ public class Member {
                 MemberID = memberID;
             } else {
 
-                throw new Exception("the id cannot be less than 1");
+                throw new Exception();
             }
         }catch (Exception e){
 
-            throw new Exception("the member id was not a integer!!");
+            throw new Exception("the member id cannot be less than 1");
         }
 
 
@@ -169,9 +169,9 @@ public class Member {
         try {
 
             if (dob.matches(DateRegex)){
-                Dob = dob;} else{ new Exception("the date did not match!!");}
+                Dob = dob;} else{ new Exception();}
         }catch (Exception e){
-            throw new Exception("the date field was not a string!!");
+            throw new Exception("the date field is not correct");
         }
     }
 

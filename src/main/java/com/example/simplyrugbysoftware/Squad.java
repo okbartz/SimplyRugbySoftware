@@ -20,6 +20,8 @@ public class Squad {
 
     }
 
+    // TODO: 05/05/2023 change the exeptions 
+
     public int getTeamID() {
         return TeamID;
     }

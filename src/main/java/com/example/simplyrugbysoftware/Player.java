@@ -36,6 +36,8 @@ public class Player {
 
     }
 
+    // TODO: 05/05/2023 change the exeptions
+
     public String getFieldPosition() {
         return FieldPosition;
     }

@@ -170,6 +170,7 @@ public class CoachMemberMenuController {
                 InputEmail1.setText(member.getEmail());
                 InputHomeAddress1.setText(member.getHomeAddress());
                 InputAge1.setPromptText(member.getDob());
+                errorText.setText("");
             } else {
 
                 InputFirstName1.setText("");
@@ -179,11 +180,13 @@ public class CoachMemberMenuController {
                 InputHomeAddress1.setText("");
                 InputAge1.setPromptText("");
                 InputAge1.setValue(null);
+                errorText.setText("");
 
             }
 
         } catch (NumberFormatException e) {
 
+            errorText.setText(e.getMessage());
             throw new RuntimeException(e);
 
         }
@@ -207,7 +210,7 @@ public class CoachMemberMenuController {
             AddMemberPane.setVisible(false);
         }catch (Exception e){
 
-            errorText.setText("Make sure that fields are correct");
+            errorText.setText(e.getMessage());
 
         }
 
@@ -228,7 +231,7 @@ public class CoachMemberMenuController {
             errorText.setText("");
         }catch (Exception e){
 
-        errorText.setText("Make sure that fields are correct");
+        errorText.setText(e.getMessage());
 
         }
 
