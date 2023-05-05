@@ -216,7 +216,7 @@ public class CoachPlayerMenuController {
             AddPlayerPane.setVisible(false);
         }catch (Exception e){
 
-            errorText.setText("Make sure that fields are correct");
+            errorText.setText(e.getMessage());
 
         }
 
