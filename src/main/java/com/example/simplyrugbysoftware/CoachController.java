@@ -1,5 +1,13 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,6 +53,7 @@ public class CoachController {
 
     DatabaseController databaseController = new DatabaseController();
 
+    //method for setting the user
 
     public void setUser(int UserID) {
         CurrentUserID = UserID;
@@ -55,7 +64,7 @@ public class CoachController {
 
 
 
-
+//method for switching to the main menu scene
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -64,7 +73,7 @@ public class CoachController {
         stage.setScene(scene);
         stage.show();
     }
-
+    //method for switching to the member menu scene
     public void SwitchSceneMember(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachMemberMenu.fxml"));
@@ -81,7 +90,7 @@ public class CoachController {
 
 
     }
-
+    //method for switching to the coach menu scene
     public void SwitchSceneCoach(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachCoachMenu.fxml"));
@@ -98,6 +107,8 @@ public class CoachController {
 
 
     }
+
+    //method for switching to the session menu scene
     public void SwitchSceneSession(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachSessionsMenu.fxml"));
@@ -114,7 +125,7 @@ public class CoachController {
 
 
     }
-
+    //method for switching to the squad menu scene
     public void SwitchSceneSquad(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachSquadMenu.fxml"));
@@ -131,7 +142,7 @@ public class CoachController {
 
 
     }
-
+    //method for switching to the fixture menu scene
     public void SwitchSceneFixture(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachFixturesMenu.fxml"));
@@ -148,7 +159,7 @@ public class CoachController {
 
 
     }
-
+    //method for switching to the player menu scene
     public void SwitchScenePlayer(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachPlayerMenu.fxml"));

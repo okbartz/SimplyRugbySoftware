@@ -19,7 +19,7 @@
          <children>
             <Text fx:id="RemoveORViewText" layoutX="106.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the Memberid of the Player you want to see" />
             <TextField fx:id="ViewPlayerInput" layoutX="169.0" layoutY="45.0" />
-            <Button fx:id="FindPlayerBtn" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#ViewMembers" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
+            <Button fx:id="FindPlayerBtn" layoutX="203.0" layoutY="75.0" mnemonicParsing="false" onAction="#ViewPlayers" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="OK" />
          </children>
       </Pane>
       <Pane fx:id="AddPlayerPane" layoutX="212.0" layoutY="79.0" prefHeight="294.0" prefWidth="371.0" style="-fx-background-color: DAE8FC;" visible="false">

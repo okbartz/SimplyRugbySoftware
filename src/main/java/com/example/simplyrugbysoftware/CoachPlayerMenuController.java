@@ -1,5 +1,11 @@
 package com.example.simplyrugbysoftware;
+/*
 
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,15 +33,11 @@ public class CoachPlayerMenuController {
     private Scene scene;
     private Parent root;
 
+    //variables
     private int CurrentUserID;
     @FXML
     private TextField idField;
-//    @FXML
-//    private Button sessionBtn;
-//    @FXML
-//    private Button fixtureBtn;
-//    @FXML
-//    private Button backBtn;
+
     @FXML
     private Text RemoveORViewText;
 
@@ -68,7 +70,7 @@ public class CoachPlayerMenuController {
     @FXML
     private TextField ViewPlayerInput;
 
-// Adding Players
+// Adding Players variables
 
 
     @FXML private TextField InputFieldPosition;
@@ -79,9 +81,8 @@ public class CoachPlayerMenuController {
 
 
 
-    // >>>
 
-    // Editing Players
+    // Editing Players variables
 
     @FXML private TextField InputFieldPosition1;
     @FXML private TextField InputMemberID1;
@@ -94,12 +95,12 @@ public class CoachPlayerMenuController {
     @FXML private TextField InputConsent;
 
 
-    // >>>
 
 
+    //initializing the databasecontroller
     DatabaseController databaseController = new DatabaseController();
 
-
+    //method for switching to the coach choice menu scene.
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -115,13 +116,13 @@ public class CoachPlayerMenuController {
         stage.show();
 
     }
-
+//method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
 
     }
 
-
+//methods for opening the different panes
     public void openViewPlayer(ActionEvent event) throws IOException {
         AddPlayerPane.setVisible(false);
         ViewPlayerPane1.setVisible(true);
@@ -142,17 +143,11 @@ public class CoachPlayerMenuController {
         EditPlayerPane.setVisible(true);
 
     }
-    public void openRemovePlayer(ActionEvent event) throws IOException {
-        AddPlayerPane.setVisible(false);
-        ViewPlayerPane1.setVisible(false);
-
-        EditPlayerPane.setVisible(false);
-
-    }
 
 
 
 
+//method for setting the edit inputs for the edit pane
     public void SetEditInputs(KeyEvent event) throws IOException {
 
         System.out.println("inputing the Players details");
@@ -204,7 +199,7 @@ public class CoachPlayerMenuController {
 
     }
 
-
+//method for adding players
     public void AddPlayer(ActionEvent event) throws IOException {
 
         try {
@@ -222,6 +217,7 @@ public class CoachPlayerMenuController {
 
 
     }
+    //method for editing players
     public void EditPlayer(ActionEvent event) throws IOException {
 
         try {
@@ -241,13 +237,14 @@ public class CoachPlayerMenuController {
         }
 
     }
-    public void ViewMembers(ActionEvent event) throws IOException {
+    //method for viewing players
+    public void ViewPlayers(ActionEvent event) throws IOException {
 
         try{
 
         Player crnPly = (databaseController.ViewPlayer(Integer.parseInt(ViewPlayerInput.getText())));
 
-// This is pretty cool
+
 
         ObservableList<PieChart.Data> PlayerpieChartData =
                 FXCollections.observableArrayList(
@@ -279,7 +276,7 @@ public class CoachPlayerMenuController {
         }
 
     }
-
+    //method for viewing all players
     public void ViewAll(ActionEvent event) throws IOException {
 
 

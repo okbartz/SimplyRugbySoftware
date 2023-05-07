@@ -1,5 +1,11 @@
 package com.example.simplyrugbysoftware;
+/*
 
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +29,7 @@ public class CoachFixturesMenuController {
     private Scene scene;
     private Parent root;
 
+    //variables
     private int CurrentUserID;
     @FXML
     private TextField idField;
@@ -38,10 +45,10 @@ public class CoachFixturesMenuController {
     @FXML
     private TextArea lstBox;
 
-
+    //initializing the databasecontroller
     DatabaseController databaseController = new DatabaseController();
 
-
+    //method for switching back to the coach choice menu
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -57,7 +64,7 @@ public class CoachFixturesMenuController {
         stage.show();
 
     }
-
+    //method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
 
@@ -65,7 +72,7 @@ public class CoachFixturesMenuController {
     }
 
 
-
+    //method for viewing fixtures
     public void ViewFixture(ActionEvent event) throws IOException {
 
         try{

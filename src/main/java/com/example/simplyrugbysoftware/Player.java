@@ -1,7 +1,16 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 public class Player {
 
+    // player variables
     private String FieldPosition;
     static int NextID = 0;
     private int MemberID;
@@ -13,6 +22,7 @@ public class Player {
     private int Rucking;
     private Boolean Consent;
 
+    //player constructor
     public Player(String fieldPosition, int memberID, int teamID, int passing, int catching, int running, int tackling, int rucking, Boolean consent) {
 
         try{
@@ -32,12 +42,14 @@ public class Player {
 
     }
 
+    //empty player constructor
     public Player() {
 
     }
 
-    // TODO: 05/05/2023 change the exeptions
 
+
+    //empty getters and setters
     public String getFieldPosition() {
         return FieldPosition;
     }
@@ -209,6 +221,7 @@ public class Player {
 
     }
 
+    // tostring method
     @Override
     public String toString() {
         return "Player{" +

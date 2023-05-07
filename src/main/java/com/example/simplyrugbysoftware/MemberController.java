@@ -1,5 +1,13 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,12 +56,14 @@ public class MemberController {
     DatabaseController databaseController = new DatabaseController();
 
 
+    //method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         welcomeText.setText("Welcome, " + databaseController.ViewMember(CurrentUserID).getFname());
         Currentmember = databaseController.ViewMember(CurrentUserID);
     }
 
+    //method for switching the scene to the main menu
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -63,6 +73,7 @@ public class MemberController {
         stage.show();
     }
 
+    //method for viewing the session for the member
     public void ViewSesh(ActionEvent event) throws IOException {
 
 
@@ -76,6 +87,7 @@ public class MemberController {
 
 
     }
+    //method for viewing the sessions of the member
     public void ViewFixt(ActionEvent event) throws IOException {
 
         System.out.println("current memberid = " + CurrentUserID);
@@ -89,6 +101,7 @@ public class MemberController {
 
     }
 
+    //method for opening the consent pane
     public void openConsent(ActionEvent event) throws IOException {
 
         consentPane.setVisible(true);
@@ -97,6 +110,7 @@ public class MemberController {
 
     }
 
+    //method for setting the consent to true
     public void setConsent(ActionEvent event) throws IOException {
 
        Player playerconsent = databaseController.ViewPlayer(CurrentUserID);

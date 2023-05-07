@@ -1,5 +1,13 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,7 +68,7 @@ public class FixtureSecretaryController {
     @FXML
     private TextField playerID1;
 
-// Adding Fixtures
+// Adding Fixtures variables
 
 
     @FXML private TextField fixtureTeamIdInput;
@@ -70,13 +78,7 @@ public class FixtureSecretaryController {
     @FXML private TextField fixtureTimelimitInput;
     @FXML private DatePicker fixtureDateInput1;
 
-
-
-
-    // >>>
-
-
-    //removing fixtures
+    //removing fixtures variables
 
     @FXML private TextField removeFixtureInput;
 
@@ -84,16 +86,17 @@ public class FixtureSecretaryController {
 
     private Member Currentmember;
 
-
+    //initiating the database controller
     DatabaseController databaseController = new DatabaseController();
 
-
+    //method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         welcomeText.setText("Welcome, " + databaseController.ViewMember(CurrentUserID).getFname());
         Currentmember = databaseController.ViewMember(CurrentUserID);
     }
 
+    //method for switching scenes to the main menu
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -103,7 +106,7 @@ public class FixtureSecretaryController {
         stage.show();
     }
 
-
+    //methods for opening the different panes
     public void openFixtures(ActionEvent event) throws IOException {
         fixturesPane.setVisible(true);
         MemberPane1.setVisible(false);
@@ -130,7 +133,7 @@ public class FixtureSecretaryController {
         RemoveFixturePane.setVisible(true);
     }
 
-
+    //method for viewing the fixtures
     public void ViewFixtures(ActionEvent event) throws IOException {
 
     try {
@@ -147,6 +150,7 @@ public class FixtureSecretaryController {
 
 
     }
+    //method for adding the fixtures
     public void AddFixtures(ActionEvent event) throws IOException {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -167,6 +171,7 @@ public class FixtureSecretaryController {
         }
 
     }
+    //method for viewing the members
     public void ViewMembers(ActionEvent event) throws IOException {
 
         try {
@@ -182,7 +187,7 @@ public class FixtureSecretaryController {
 
         }
     }
-
+    //method for removing the fixtures
     public void RemoveFixture(ActionEvent event) throws IOException {
         try{
             databaseController.DeleteFixture(Integer.parseInt(removeFixtureInput.getText()));

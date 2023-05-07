@@ -1,9 +1,20 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 public class Fixture {
 
 
+    //date regex
     private String DateRegex = ("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$");
+
+    //variables for fixture
     private int TeamID;
     private int FixtureID;
     private int TimeLimit;
@@ -12,6 +23,7 @@ public class Fixture {
     private String Skills;
     static int NextID = 0;
 
+    //fixture constructor
     public Fixture(int teamID, int fixtureID, int timeLimit, String playingField, String date, String skills) {
         try {
         setTeamID(teamID);
@@ -27,8 +39,8 @@ public class Fixture {
 
     }
 
-// TODO: 05/05/2023 change the expressions
 
+    //getters and setters
     public int getTeamID() {
         return TeamID;
     }
@@ -137,7 +149,7 @@ public class Fixture {
 
     }
 
-
+// to string method
     @Override
     public String toString() {
         return "Fixture{" +

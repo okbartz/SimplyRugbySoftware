@@ -1,9 +1,19 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 public class Session {
 
+    //date regex
     private String DateRegex = ("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$");
 
+    //session variables
     private int TeamID;
     private int SessionID;
     private int TimeLimit;
@@ -11,7 +21,7 @@ public class Session {
     private String Activity;
     static int NextID = 0;
 
-    // TODO: 05/05/2023 change the exeptions
+    // Constructor for session
     public Session(int teamID, int sessionID, int timeLimit, String date, String activity) {
         try{
         setTeamID(teamID);
@@ -25,6 +35,7 @@ public class Session {
         }
     }
 
+    //getters and setters
     public int getTeamID() {
         return TeamID;
     }
@@ -115,6 +126,7 @@ public class Session {
         }
     }
 
+    //tostring method
     @Override
     public String toString() {
         return "Session{" +

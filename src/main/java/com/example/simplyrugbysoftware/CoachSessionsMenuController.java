@@ -1,5 +1,11 @@
 package com.example.simplyrugbysoftware;
+/*
 
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,15 +30,11 @@ public class CoachSessionsMenuController {
     private Scene scene;
     private Parent root;
 
+    //variables
     private int CurrentUserID;
     @FXML
     private TextField idField;
-//    @FXML
-//    private Button sessionBtn;
-//    @FXML
-//    private Button fixtureBtn;
-//    @FXML
-//    private Button backBtn;
+
     @FXML
     private Text RemoveORViewText;
 
@@ -53,16 +55,16 @@ public class CoachSessionsMenuController {
 
 
 
-    //Remove Member Variables
+    //Remove Session Variables
     @FXML
     private TextField RemoveSessionInput;
 
 
-    //View Member Variables
+    //View Session Variables
     @FXML
     private TextField ViewSessionInput;
 
-// Adding Members
+// Adding Session variables
 
 
     @FXML private TextField InputTeamId;
@@ -73,9 +75,8 @@ public class CoachSessionsMenuController {
 
     @FXML private DatePicker InputDate;
 
-    // >>>
 
-    // Editing Members
+    // Editing Session variables
 
 
     @FXML private TextField InputTeamId1;
@@ -86,12 +87,11 @@ public class CoachSessionsMenuController {
 
     @FXML private DatePicker InputDate1;
 
-    // >>>
 
-
+    //initializing the databasecontroller
     DatabaseController databaseController = new DatabaseController();
 
-
+    //method for switching to the coach choice menu scene.
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -107,14 +107,14 @@ public class CoachSessionsMenuController {
         stage.show();
 
     }
-
+    //method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         InputActivity.getItems().addAll(options);
 
     }
 
-
+    //methods for opening the different panes
     public void openViewSession(ActionEvent event) throws IOException {
         AddSessionPane.setVisible(false);
         ViewSessionPane1.setVisible(true);
@@ -137,7 +137,7 @@ public class CoachSessionsMenuController {
 
     }
 
-
+    //method for adding sessions
     public void AddSession(ActionEvent event) throws IOException {
 
         try {
@@ -159,7 +159,7 @@ public class CoachSessionsMenuController {
 
 
     }
-
+    //method for viewing sessions
     public void ViewSession(ActionEvent event) throws IOException {
 
         try{
@@ -175,7 +175,7 @@ public class CoachSessionsMenuController {
         }
 
     }
-
+    //method for removing sessions
     public void RemoveSessions(ActionEvent event) throws IOException {
         try{
         databaseController.DeleteSession(Integer.parseInt(RemoveSessionInput.getText()));

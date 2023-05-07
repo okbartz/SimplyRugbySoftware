@@ -1,9 +1,19 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 public class Member {
+    //date regex and uk address regex
     private String DateRegex = ("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$");
 
     private String ukAddressregex = ("([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\\s?[0-9][A-Za-z]{2})");
+
+    //member variables
     private String Fname;
     private String Sname;
     private String Sex;
@@ -13,6 +23,8 @@ public class Member {
     static int NextID = 0;
 
     private String Dob;
+
+    //member constructor
 
     public Member(String fname, String sname, String sex, String email, String homeAddress, int memberID, String Dob) {
         try {
@@ -28,11 +40,11 @@ public class Member {
             throw new RuntimeException(e);
         }
     }
-
+    //empty member constructor
     public Member() {
 
     }
-
+    //getters and setters
     public String getFname() {
         return Fname;
     }
@@ -175,6 +187,7 @@ public class Member {
         }
     }
 
+    //tostring method
     @Override
     public String toString() {
         return "Member{" +

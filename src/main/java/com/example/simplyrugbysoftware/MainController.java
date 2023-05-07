@@ -1,5 +1,13 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,8 +32,11 @@ public class MainController {
     @FXML
     private Text errorText;
 
+    //initiating the database controller
+
     DatabaseController databaseController = new DatabaseController();
 
+    //method for switching the scene to the coach scene
     public void SwitchSceneCoach(ActionEvent event) throws IOException {
 
         DatabaseController databaseController = new DatabaseController();
@@ -76,6 +87,7 @@ public class MainController {
 
     }
 
+    //method for switching the scene to the secretary scene
     public void SwitchSceneSecretary(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("FixtureSecretary.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -83,7 +95,7 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
-
+    //method for switching the scene to the member scene
     public void SwitchSceneMember(ActionEvent event) throws IOException {
 
         DatabaseController databaseController = new DatabaseController();

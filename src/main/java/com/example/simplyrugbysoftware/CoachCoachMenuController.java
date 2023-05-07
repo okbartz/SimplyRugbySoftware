@@ -1,5 +1,13 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,16 +61,16 @@ public class CoachCoachMenuController {
 
 
 
-    //Remove Member Variables
+    //Remove Coach Variables
     @FXML
     private TextField RemoveCoachInput;
 
 
-    //View Member Variables
+    //View Coach Variables
     @FXML
     private TextField ViewCoachInput;
 
-// Adding Members
+// Adding Coaches variables
 
 
     @FXML private TextField InputMemberID;
@@ -70,21 +78,21 @@ public class CoachCoachMenuController {
     @FXML private TextField InputCoachID;
 
 
-    // >>>
 
-    // Editing Members
+
+    // Editing Coaches variables
 
     @FXML private TextField InputMemberID1;
     @FXML private TextField InputTeamAssigned1;
     @FXML private TextField InputCoachID1;
 
 
-    // >>>
 
 
+//initialize databasecontroller
     DatabaseController databaseController = new DatabaseController();
 
-
+// method for switching scenes to the coach choice menu
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -100,13 +108,13 @@ public class CoachCoachMenuController {
         stage.show();
 
     }
-
+//method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
 
     }
 
-
+//methods for opening different panes
     public void openViewCoach(ActionEvent event) throws IOException {
         AddCoachPane.setVisible(false);
         ViewCoachPane1.setVisible(true);
@@ -139,7 +147,7 @@ public class CoachCoachMenuController {
 
 
 
-
+//method for setting the inputs for the edit pane
     public void SetEditInputs(KeyEvent event) throws IOException {
 
         System.out.println("inputing the members details");
@@ -174,7 +182,7 @@ public class CoachCoachMenuController {
 
 
     }
-
+//method for viewing all coaches
     public void ViewAll(ActionEvent event) throws IOException {
 
 
@@ -194,7 +202,7 @@ public class CoachCoachMenuController {
     }
 
 
-
+    //method for adding coaches
     public void AddCoach(ActionEvent event) throws IOException {
 
         try {
@@ -215,6 +223,7 @@ public class CoachCoachMenuController {
 
 
     }
+    //method for editing coaches
     public void EditCoach(ActionEvent event) throws IOException {
 
         try {
@@ -231,6 +240,7 @@ public class CoachCoachMenuController {
         }
 
     }
+    //method for viewing coaches
     public void ViewCoach(ActionEvent event) throws IOException {
 
         try{

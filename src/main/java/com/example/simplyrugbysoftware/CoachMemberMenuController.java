@@ -1,5 +1,11 @@
 package com.example.simplyrugbysoftware;
+/*
 
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,15 +30,11 @@ public class CoachMemberMenuController {
     private Scene scene;
     private Parent root;
 
+    //variables
     private int CurrentUserID;
     @FXML
     private TextField idField;
-//    @FXML
-//    private Button sessionBtn;
-//    @FXML
-//    private Button fixtureBtn;
-//    @FXML
-//    private Button backBtn;
+
     @FXML
     private Text RemoveORViewText;
 
@@ -62,7 +64,7 @@ public class CoachMemberMenuController {
     @FXML
     private TextField ViewMemberInput;
 
-// Adding Members
+// Adding Members variables
 
 
     @FXML private TextField InputFirstName;
@@ -74,9 +76,9 @@ public class CoachMemberMenuController {
     @FXML private TextField InputHomeAddress;
     @FXML private DatePicker InputAge;
 
-    // >>>
 
-    // Editing Members
+
+    // Editing Members variables
 
 
     @FXML private TextField InputFirstName1;
@@ -87,12 +89,12 @@ public class CoachMemberMenuController {
     @FXML private DatePicker InputAge1;
     @FXML private TextField InputMemberID1;
 
-    // >>>
 
 
+// databasecontroller initialization
     DatabaseController databaseController = new DatabaseController();
 
-
+//method for switching scenes to the coach choice menu
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -108,14 +110,14 @@ public class CoachMemberMenuController {
         stage.show();
 
     }
-
+//method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         InputSex.getItems().addAll(sexes);
         InputSex1.getItems().addAll(sexes);
     }
 
-
+//methods for opening the different panes
     public void openViewMember(ActionEvent event) throws IOException {
         AddMemberPane.setVisible(false);
         ViewMemberPane1.setVisible(true);
@@ -146,7 +148,7 @@ public class CoachMemberMenuController {
 
 
 
-
+//method for setting the edit pane inputs
     public void SetEditInputs(KeyEvent event) throws IOException {
 
         System.out.println("inputing the members details");
@@ -194,7 +196,7 @@ public class CoachMemberMenuController {
 
     }
 
-
+    //method for adding members
     public void AddMember(ActionEvent event) throws IOException {
 
         try {
@@ -218,6 +220,7 @@ public class CoachMemberMenuController {
 
 
     }
+    //method for editing members
     public void EditMember(ActionEvent event) throws IOException {
 
         try {
@@ -238,7 +241,7 @@ public class CoachMemberMenuController {
         }
 
     }
-
+    //method for viewing all members
     public void ViewAll(ActionEvent event) throws IOException {
 
 
@@ -257,7 +260,7 @@ public class CoachMemberMenuController {
 
     }
 
-
+    //method for viewing members
     public void ViewMembers(ActionEvent event) throws IOException {
 
         try{
@@ -273,7 +276,7 @@ public class CoachMemberMenuController {
         }
 
     }
-
+    //method for removing members
     public void RemoveMembers(ActionEvent event) throws IOException {
         try{
         databaseController.RemoveMember(Integer.parseInt(RemoveMemberInput.getText()));

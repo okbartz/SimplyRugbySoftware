@@ -1,5 +1,11 @@
 package com.example.simplyrugbysoftware;
+/*
 
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,15 +27,11 @@ public class CoachSquadMenuController {
     private Scene scene;
     private Parent root;
 
+    //variables
     private int CurrentUserID;
     @FXML
     private TextField idField;
-//    @FXML
-//    private Button sessionBtn;
-//    @FXML
-//    private Button fixtureBtn;
-//    @FXML
-//    private Button backBtn;
+
     @FXML
     private Text RemoveORViewText;
 
@@ -48,40 +50,37 @@ public class CoachSquadMenuController {
     @FXML
     private Pane RemoveSquadPane;
 
-
+    private String[] ageGrades = {"U9","U10"};
 
     //Remove Squad Variables
     @FXML
     private TextField RemoveSquadInput;
 
 
-    //View Member Variables
+    //View Squad Variables
     @FXML
     private TextField ViewSquadInput;
 
-// Adding Squads
+// Adding Squads variables
 
 
     @FXML private TextField InputTeamID;
 
     @FXML private ChoiceBox InputAgegrade;
 
-    // >>>
 
-    // Editing Squads
+
+    // Editing Squads variables
 
     @FXML private TextField InputTeamID1;
 
     @FXML private ChoiceBox InputAgegrade1;
 
 
-    // >>>
-
-    private String[] ageGrades = {"U9","U10"};
-
+    //initializing the databasecontroller
     DatabaseController databaseController = new DatabaseController();
 
-
+    //method for switching to the coach choice menu scene.
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -97,7 +96,7 @@ public class CoachSquadMenuController {
         stage.show();
 
     }
-
+    //method for setting the user
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         InputAgegrade1.getItems().addAll(ageGrades);
@@ -105,7 +104,7 @@ public class CoachSquadMenuController {
 
     }
 
-
+    //methods for opening the different panes
     public void openViewSquad(ActionEvent event) throws IOException {
         AddSquadPane.setVisible(false);
         ViewSquadPane1.setVisible(true);
@@ -139,7 +138,7 @@ public class CoachSquadMenuController {
 
 
 
-
+//method for adding a squad
     public void AddSquad(ActionEvent event) throws IOException {
 
         try {
@@ -160,6 +159,7 @@ public class CoachSquadMenuController {
 
 
     }
+    //method for editing a squad
     public void EditSquad(ActionEvent event) throws IOException {
 
         try {
@@ -176,6 +176,7 @@ public class CoachSquadMenuController {
         }
 
     }
+    //method for viewing a squad
     public void ViewSquad(ActionEvent event) throws IOException {
 
         try{
@@ -191,7 +192,7 @@ public class CoachSquadMenuController {
         }
 
     }
-
+    //method for viewing all squad
     public void ViewAll(ActionEvent event) throws IOException {
 
 
@@ -209,7 +210,7 @@ public class CoachSquadMenuController {
 
 
     }
-
+    //method for removing a squad
     public void RemoveSquad(ActionEvent event) throws IOException {
         try{
             databaseController.DeleteSquad(Integer.parseInt(RemoveSquadInput.getText()));

@@ -1,11 +1,21 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
 public class Coach {
+
+    //variables for coach
     static int NextID = 0;
     private int MemberID;
     private int TeamAssigned;
     private int CoachID;
 
+    //coach constructor
     public Coach(int memberID, int teamAssigned, int coachID) {
         try{
             setMemberID(memberID);
@@ -18,11 +28,13 @@ public class Coach {
 
     }
 
+    //empty coach constructor
     public Coach() {
 
     }
 
 
+    //getters and setters
     public int getMemberID() {
         return MemberID;
     }
@@ -77,6 +89,7 @@ public class Coach {
         }
     }
 
+    //tostring method
     @Override
     public String toString() {
         return "Coach{" +

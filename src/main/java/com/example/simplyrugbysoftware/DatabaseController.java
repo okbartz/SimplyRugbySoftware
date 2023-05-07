@@ -1,5 +1,13 @@
 package com.example.simplyrugbysoftware;
 
+/*
+
+07/05/2023
+Simply Rugby Software
+Bartlomiej Klich
+
+*/
+
 import java.sql.*;
 
 public class DatabaseController {
@@ -29,11 +37,11 @@ public class DatabaseController {
                 statement.executeUpdate();
                 statement.close();
 
-                PreparedStatement playerTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Player (fieldposition VARCHAR(64), memberid INTEGER(64), teamid INTEGER(64), passing INTEGER(64), catching INTEGER(64), running INTEGER(64), tackling INTEGER(64), rucking INTEGER(64), consent INTEGER(1))");
+                PreparedStatement playerTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Player (fieldposition VARCHAR(64), memberid INTEGER, teamid INTEGER, passing INTEGER(64), catching INTEGER(64), running INTEGER(64), tackling INTEGER(64), rucking INTEGER(64), consent INTEGER(1), FOREIGN KEY(memberid) REFERENCES Member(memberid), FOREIGN KEY(teamid) REFERENCES Squad(teamid))");
                 playerTable.executeUpdate();
                 playerTable.close();
 
-                PreparedStatement coachTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Coach (coachid INTEGER PRIMARY KEY AUTOINCREMENT , memberid INTEGER(64), teamid INTEGER(64))");
+                PreparedStatement coachTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Coach (coachid INTEGER PRIMARY KEY AUTOINCREMENT , memberid INTEGER, teamid INTEGER, FOREIGN KEY(memberid) REFERENCES Member(memberid), FOREIGN KEY(teamid) REFERENCES Squad(teamid))");
                 coachTable.executeUpdate();
                 coachTable.close();
 
@@ -41,11 +49,11 @@ public class DatabaseController {
                 squadTable.executeUpdate();
                 squadTable.close();
 
-                PreparedStatement fixtureTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Fixture (teamid INTEGER(64), fixtureid INTEGER PRIMARY KEY AUTOINCREMENT, playingfield VARCHAR(64), skills VARCHAR(64), timelimit INTEGER(64), date VARCHAR(64))");
+                PreparedStatement fixtureTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Fixture (teamid INTEGER, fixtureid INTEGER PRIMARY KEY AUTOINCREMENT, playingfield VARCHAR(64), skills VARCHAR(64), timelimit INTEGER(64), date VARCHAR(64),FOREIGN KEY(teamid) REFERENCES Squad(teamid))");
                 fixtureTable.executeUpdate();
                 fixtureTable.close();
 
-                PreparedStatement sessionTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Session (teamid INTEGER(64), activity VARCHAR(64), timelimit INTEGER(64), date VARCHAR(64), sessionid INTEGER PRIMARY KEY AUTOINCREMENT)");
+                PreparedStatement sessionTable = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Session (teamid INTEGER, activity VARCHAR(64), timelimit INTEGER(64), date VARCHAR(64), sessionid INTEGER PRIMARY KEY AUTOINCREMENT, FOREIGN KEY(teamid) REFERENCES Squad(teamid))");
                 sessionTable.executeUpdate();
                 sessionTable.close();
 
@@ -63,7 +71,7 @@ public class DatabaseController {
 
     }
 
-
+    //    The following sections is for the methods relating to the member table
     public void AddMember(Member member) {
     try {
         Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
