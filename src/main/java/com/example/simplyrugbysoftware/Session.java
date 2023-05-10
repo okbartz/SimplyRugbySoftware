@@ -118,7 +118,7 @@ public class Session {
         try {
 
             activity.toUpperCase();
-            if (activity.matches("\\D*")){
+            if (activity.matches("\\P{Alpha}")){
                 Activity = activity;} else {throw new Exception();}
         }catch (Exception e){
 

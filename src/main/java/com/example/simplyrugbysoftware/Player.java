@@ -59,7 +59,7 @@ public class Player {
         try {
 
             fieldPosition.toUpperCase();
-            if (fieldPosition.matches("\\D*")){
+            if (fieldPosition.matches("\\P{Alpha}")){
                 FieldPosition = fieldPosition;} else {throw new Exception();}
         }catch (Exception e){
 

@@ -139,7 +139,7 @@ public class Fixture {
         try {
 
             skills.toUpperCase();
-            if (skills.matches("\\D*")){
+            if (skills.matches("\\P{Alpha}")){
             Skills = skills;} else {throw new Exception();}
         }catch (Exception e){
 

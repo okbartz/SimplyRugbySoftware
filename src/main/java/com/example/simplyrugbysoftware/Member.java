@@ -54,7 +54,7 @@ public class Member {
 
         try {
 
-            if (fname.matches("\\D*")){
+            if (fname.matches("\\P{Alpha}")){
                 Fname = fname;}
             else {
                 throw new Exception();
@@ -75,7 +75,7 @@ public class Member {
     public void setSname(String sname) throws Exception{
 
         try {
-        if (sname.matches("\\D*")){
+        if (sname.matches("\\P{Alpha}")){
             Sname = sname;}
         else {
             throw new Exception();
