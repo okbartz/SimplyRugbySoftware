@@ -8,6 +8,14 @@ Bartlomiej Klich
 
 */
 
+/**
+ * 07/05/2023 <br>
+ * Simply Rugby Software <br>
+ * Bartlomiej Klich <br>
+ *
+ * Main class
+ */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

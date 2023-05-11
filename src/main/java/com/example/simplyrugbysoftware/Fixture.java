@@ -139,7 +139,7 @@ public class Fixture {
         try {
 
             skills.toUpperCase();
-            if (skills.matches("\\P{Alpha}")){
+            if (skills.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
             Skills = skills;} else {throw new Exception();}
         }catch (Exception e){
 

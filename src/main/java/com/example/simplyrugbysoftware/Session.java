@@ -118,7 +118,7 @@ public class Session {
         try {
 
             activity.toUpperCase();
-            if (activity.matches("\\P{Alpha}")){
+            if (activity.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
                 Activity = activity;} else {throw new Exception();}
         }catch (Exception e){
 

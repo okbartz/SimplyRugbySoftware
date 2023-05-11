@@ -59,7 +59,7 @@ public class Player {
         try {
 
             fieldPosition.toUpperCase();
-            if (fieldPosition.matches("\\P{Alpha}")){
+            if (fieldPosition.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
                 FieldPosition = fieldPosition;} else {throw new Exception();}
         }catch (Exception e){
 

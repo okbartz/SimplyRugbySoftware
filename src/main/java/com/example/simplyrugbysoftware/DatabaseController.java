@@ -33,6 +33,10 @@ public class DatabaseController {
 
             PreparedStatement statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Member (fname VARCHAR(64), sname VARCHAR(64), sex VARCHAR(64), email VARCHAR(64), homeaddress VARCHAR(64), memberid INTEGER PRIMARY KEY AUTOINCREMENT, dob VARCHAR(64))");
 
+            // TODO: 11/05/2023 fix the foreign keys rearranege the prepare statements in the correct order.
+
+            // TODO: 11/05/2023  
+
             try {
                 statement.executeUpdate();
                 statement.close();

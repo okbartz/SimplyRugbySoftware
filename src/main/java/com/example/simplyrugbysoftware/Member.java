@@ -54,7 +54,7 @@ public class Member {
 
         try {
 
-            if (fname.matches("\\P{Alpha}")){
+            if (fname.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
                 Fname = fname;}
             else {
                 throw new Exception();
@@ -75,7 +75,7 @@ public class Member {
     public void setSname(String sname) throws Exception{
 
         try {
-        if (sname.matches("\\P{Alpha}")){
+        if (sname.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
             Sname = sname;}
         else {
             throw new Exception();
