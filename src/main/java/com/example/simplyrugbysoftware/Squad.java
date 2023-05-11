@@ -1,11 +1,13 @@
 package com.example.simplyrugbysoftware;
-/*
+/**
+ *
+ * Squad class, the class that holds squad details.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 
-07/05/2023
-Simply Rugby Software
-Bartlomiej Klich
-
-*/
 public class Squad {
 
     //variables
@@ -14,6 +16,16 @@ public class Squad {
     private String AgeGrade;
 
     //squad constructor
+    /**
+     *
+     * Squad constructor ensures that all the details are validated through the use of setters.
+     * @author Bartlomiej Klich
+     * @version
+     * @param teamID the variable used for holding the team id of the squad.
+     * @param ageGrade the variable used for the agegrade of the squad.
+     *
+     *
+     */
     public Squad(int teamID, String ageGrade) {
        try{
            setTeamID(teamID);
@@ -25,16 +37,36 @@ public class Squad {
     }
 
     //empty squad constructor
+    /**
+     *
+     * Empty Squad constructor.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public Squad() {
 
     }
 
 
     //getters and setters
+    /**
+     *
+     * Method for getting the teamID.
+     * @author Bartlomiej Klich
+     * @version
+     * @return TeamID the variable used for holding the team id of the player.
+     */
     public int getTeamID() {
         return TeamID;
     }
-
+    /**
+     *
+     * Method for setting the teamID.
+     * @author Bartlomiej Klich
+     * @version
+     * @param teamID the variable used for holding the team id of the player.
+     */
     public void setTeamID(int teamID) throws Exception{
         try {
             if (teamID >= 0){
@@ -46,11 +78,23 @@ public class Squad {
             throw new Exception("the team id cannot be less than 1");
         }
     }
-
+    /**
+     *
+     * Method for getting the agegrade.
+     * @author Bartlomiej Klich
+     * @version
+     * @return AgeGrade the variable used for the agegrade of the squad.
+     */
     public String getAgeGrade() {
         return AgeGrade;
     }
-
+    /**
+     *
+     * Method for setting the agegrade.
+     * @author Bartlomiej Klich
+     * @version
+     * @param ageGrade the variable used for the agegrade of the squad.
+     */
     public void setAgeGrade(String ageGrade) {
 
 
@@ -60,6 +104,13 @@ public class Squad {
     }
 
     //tostring method
+    /**
+     *
+     * Method for converting the Squad to a string to be displayed.
+     * @author Bartlomiej Klich
+     * @version
+     * @return toString string.
+     */
     @Override
     public String toString() {
         return "Squad{" +

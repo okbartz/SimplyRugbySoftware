@@ -1,31 +1,26 @@
 package com.example.simplyrugbysoftware;
 
-/*
-
-07/05/2023
-Simply Rugby Software
-Bartlomiej Klich
-
-*/
-
-/**
- * 07/05/2023 <br>
- * Simply Rugby Software <br>
- * Bartlomiej Klich <br>
- *
- * Main class
- */
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ *
+ * Main class, the class that is first run.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ */
 public class Main extends Application {
 
-    //Loading the stage
+    /**
+     *
+     * This method is for starting the stage, it creates a new FXMLloader and gets the main menu fxml.
+     *
+     */
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
@@ -35,6 +30,11 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     *
+     * This method is for launching, uses the launch method
+     *
+     */
     public static void main(String[] args) {
         launch();
     }

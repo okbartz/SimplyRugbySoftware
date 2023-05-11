@@ -1,12 +1,13 @@
 package com.example.simplyrugbysoftware;
 
-/*
-
-07/05/2023
-Simply Rugby Software
-Bartlomiej Klich
-
-*/
+/**
+ *
+ * Session class, the class that holds session details.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 
 public class Session {
 
@@ -22,6 +23,19 @@ public class Session {
     static int NextID = 0;
 
     // Constructor for session
+    /**
+     *
+     * Session constructor ensures that all the details are validated through the use of setters.
+     * @author Bartlomiej Klich
+     * @version
+     * @param teamID the variable used for holding the team id.
+     * @param sessionID the variable used for holding the session id.
+     * @param timeLimit the variable used for holding the time limit of the session.
+     * @param date the variable used for holding the date of the session.
+     * @param activity the variable used for holding the activity performed during the session.
+     *
+     *
+     */
     public Session(int teamID, int sessionID, int timeLimit, String date, String activity) {
         try{
         setTeamID(teamID);
@@ -36,10 +50,27 @@ public class Session {
     }
 
     //getters and setters
+    /**
+     *
+     * Method for getting the team id.
+     * @author Bartlomiej Klich
+     * @version
+     * @return TeamID the variable used for holding the team id.
+     *
+     *
+     */
     public int getTeamID() {
         return TeamID;
     }
-
+    /**
+     *
+     * Method for setting the team id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param teamID the variable used for holding the team id.
+     *
+     *
+     */
     public void setTeamID(int teamID) throws Exception{
 
         try {
@@ -52,11 +83,27 @@ public class Session {
 
 
     }
-
+    /**
+     *
+     * Method for getting the session id.
+     * @author Bartlomiej Klich
+     * @version
+     * @return SessionID the variable used for holding the session id.
+     *
+     *
+     */
     public int getSessionID() {
         return SessionID;
     }
-
+    /**
+     *
+     * Method for setting the session id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param sessionID the variable used for holding the session id.
+     *
+     *
+     */
     public void setSessionID(int sessionID) throws Exception{
 
 
@@ -70,11 +117,27 @@ public class Session {
 
 
     }
-
+    /**
+     *
+     * Method for getting the time limit of the session.
+     * @author Bartlomiej Klich
+     * @version
+     * @return TimeLimit the variable used for the time limit of the session.
+     *
+     *
+     */
     public int getTimeLimit() {
         return TimeLimit;
     }
-
+    /**
+     *
+     * Method for setting the time limit of the session.
+     * @author Bartlomiej Klich
+     * @version
+     * @param timeLimit the variable used for the time limit of the session.
+     *
+     *
+     */
     public void setTimeLimit(int timeLimit) throws Exception{
 
         try {
@@ -91,11 +154,27 @@ public class Session {
 
 
     }
-
+    /**
+     *
+     * Method for getting the date of the session.
+     * @author Bartlomiej Klich
+     * @version
+     * @return Date the variable used for holding the date of the session.
+     *
+     *
+     */
     public String getDate() {
         return Date;
     }
-
+    /**
+     *
+     * Method for setting the date of the session.
+     * @author Bartlomiej Klich
+     * @version
+     * @param date the variable used for holding the date of the session.
+     *
+     *
+     */
     public void setDate(String date) throws Exception{
 
         try {
@@ -107,11 +186,27 @@ public class Session {
         }
 
     }
-
+    /**
+     *
+     * Method for getting the activity performed during the session.
+     * @author Bartlomiej Klich
+     * @version
+     * @return Activity the variable used for holding the activity performed during the session.
+     *
+     *
+     */
     public String getActivity() {
         return Activity;
     }
-
+    /**
+     *
+     * Method for setting the activity performed during the session.
+     * @author Bartlomiej Klich
+     * @version
+     * @param activity the variable used for holding the activity performed during the session.
+     *
+     *
+     */
     public void setActivity(String activity) throws Exception{
 
 
@@ -127,6 +222,13 @@ public class Session {
     }
 
     //tostring method
+    /**
+     *
+     * Method for converting the session to a string to be displayed.
+     * @author Bartlomiej Klich
+     * @version
+     * @return toString string.
+     */
     @Override
     public String toString() {
         return "Session{" +

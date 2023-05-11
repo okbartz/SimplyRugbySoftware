@@ -1,4 +1,11 @@
 package com.example.simplyrugbysoftware;
+/**
+ *
+ * TestDatabase class, class that was used to test the database originally.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ */
 
 public class TestDatabase {
 

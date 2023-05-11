@@ -1,21 +1,28 @@
 package com.example.simplyrugbysoftware;
-
-/*
-
-07/05/2023
-Simply Rugby Software
-Bartlomiej Klich
-
-*/
-
 import java.sql.*;
-
+/**
+ *
+ * Squad class, the class that holds squad details.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class DatabaseController {
 
 
+    // TODO: 11/05/2023 proof read javadoc before uploading 
+
 //initiating the database
 
-
+    /**
+     *
+     * DatabaseController Method used for initiating the database, checking if tables exist before creating them.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public DatabaseController() {
         try{
             Class.forName("org.sqlite.JDBC").newInstance();
@@ -34,9 +41,6 @@ public class DatabaseController {
             PreparedStatement statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Member (fname VARCHAR(64), sname VARCHAR(64), sex VARCHAR(64), email VARCHAR(64), homeaddress VARCHAR(64), memberid INTEGER PRIMARY KEY AUTOINCREMENT, dob VARCHAR(64))");
 
             // TODO: 11/05/2023 fix the foreign keys rearranege the prepare statements in the correct order.
-
-            // TODO: 11/05/2023  
-
             try {
                 statement.executeUpdate();
                 statement.close();
@@ -76,6 +80,15 @@ public class DatabaseController {
     }
 
     //    The following sections is for the methods relating to the member table
+
+
+    /**
+     *
+     * Method for adding a member to the member table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param member the class used for holding member details.
+     */
     public void AddMember(Member member) {
     try {
         Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
@@ -113,6 +126,15 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing a member from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     * @return member - the class used for holding member details.
+     */
     public Member ViewMember(int MemberID){
         Member member = new Member();
 
@@ -151,6 +173,14 @@ public class DatabaseController {
         return member;
     }
 
+
+    /**
+     *
+     * Method for removing a member from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     */
     public void RemoveMember(int MemberID){
 
 
@@ -188,6 +218,16 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for editing a member from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     * @param member the class used for holding member details.
+     *
+     */
     public void EditMember(int MemberID, Member member){
 
 
@@ -223,6 +263,14 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing all members from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     * @return MemberSetty - the member set.
+     */
     public String ViewAllMembers(){
         Member member = new Member();
         String MemberSetty ="";
@@ -262,6 +310,14 @@ public class DatabaseController {
 
 //    The following sections is for the methods relating to the player table
 
+
+    /**
+     *
+     * Method for adding a player to the player table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param player the class used for holding player details.
+     */
     public void AddPlayer(Player player) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
@@ -309,6 +365,16 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for editing a player from the player table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     * @param player the class used for holding player details.
+     *
+     */
     public void EditPlayer(int MemberID, Player player){
 
 
@@ -349,6 +415,15 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing a player from the player table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     * @return Player - the class used for holding player details.
+     */
     public Player ViewPlayer(int MemberID){
         Player player = new Player();
 
@@ -395,6 +470,14 @@ public class DatabaseController {
         return player;
     }
 
+
+    /**
+     *
+     * Method for viewing all players from the player table.
+     * @author Bartlomiej Klich
+     * @version
+     * @return PlayerSetty - the player set.
+     */
     public String ViewAllPlayers(){
         Player player = new Player();
         String PlayerSetty ="";
@@ -438,6 +521,14 @@ public class DatabaseController {
 
 
     //Coach methods section
+
+    /**
+     *
+     * Method for adding a coach to the coach table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param coach the class used for holding coach details.
+     */
     public void AddCoach(Coach coach) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
@@ -476,6 +567,15 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing a coach from the coach table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     * @return Coach - the class used for holding coach details.
+     */
     public Coach ViewCoach(int MemberID){
         Coach coach = new Coach();
 
@@ -512,6 +612,16 @@ public class DatabaseController {
         return coach;
     }
 
+
+    /**
+     *
+     * Method for editing a coach from the coach table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param MemberID the variable used for holding the member ID in Member.
+     * @param coach the class used for holding coach details.
+     *
+     */
     public void EditCoach(int MemberID, Coach coach){
 
 
@@ -544,6 +654,14 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing all coach from the coach table.
+     * @author Bartlomiej Klich
+     * @version
+     * @return CoachSetty - the coach set.
+     */
     public String ViewAllCoaches(){
         Coach coach = new Coach();
         String CoachSetty ="";
@@ -585,6 +703,14 @@ public class DatabaseController {
 
 //    Section for the squads
 
+
+    /**
+     *
+     * Method for adding a squad to the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param squad the class used for holding squad details.
+     */
     public void AddSquad(Squad squad) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
@@ -620,6 +746,16 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for editing a squad from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param SquadID the variable used for holding the squad ID in squad.
+     * @param squad the class used for holding squad details.
+     *
+     */
     public void EditSquad(int SquadID, Squad squad){
 
 
@@ -650,6 +786,15 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing a squad from the squad table and getting the players from player table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param SquadID the variable used for holding the squad ID in squad.
+     * @return Playersett - the player set.
+     */
     public String ViewSquad(int SquadID){
         ResultSet Playerset;
         String Playersett ="";
@@ -693,6 +838,15 @@ public class DatabaseController {
         return Playersett;
     }
 
+
+    /**
+     *
+     * Method for viewing one squad from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param SquadID the variable used for holding the squad ID in squad.
+     * @return Squad - the class used for holding squad details.
+     */
     public Squad ViewOneSquad(int SquadID){
         Squad squad = new Squad();
 
@@ -728,6 +882,16 @@ public class DatabaseController {
 
         return squad;
     }
+
+
+    /**
+     *
+     * Method for deleting a squad from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param SquadID the variable used for holding the squad ID in squad.
+     *
+     */
     public void DeleteSquad(int SquadID){
 
 
@@ -762,6 +926,15 @@ public class DatabaseController {
 
     }
 
+
+    /**
+     *
+     * Method for viewing all squads from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     * @return SquadSety the - squad set.
+     *
+     */
     public String ViewAllSquad(){
         Squad squad = new Squad();
         String SquadSety ="";
@@ -804,6 +977,15 @@ public class DatabaseController {
 
     // Section for the fixture methods
 
+
+    /**
+     *
+     * Method for adding a fixture to the fixture table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param fixture the class used for holding fixture details.
+     *
+     */
     public void AddFixture(Fixture fixture) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
@@ -840,7 +1022,14 @@ public class DatabaseController {
 
     }
 
-
+    /**
+     *
+     * Method for viewing a fixture from the fixture table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param FixtureID the variable used for holding the fixture ID in fixture.
+     * @return FixtureSetty - the fixture set.
+     */
     public String ViewFixture(int FixtureID){
         ResultSet FixtureSet;
         String FixtureSetty ="";
@@ -877,6 +1066,15 @@ public class DatabaseController {
         return FixtureSetty;
     }
 
+    /**
+     *
+     * Method for viewing a player's fixtures from the fixture table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param TeamID the variable used for holding the team ID in Squad.
+     * @return FixtureSetty - the fixture set.
+     *
+     */
     public String ViewPlayerFixtures(int TeamID){
         ResultSet FixtureSet;
         String FixtureSetty ="";
@@ -914,6 +1112,14 @@ public class DatabaseController {
     }
 
 
+    /**
+     *
+     * Method for deleting a fixture from the fixture table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param FixtureID the variable used for holding the fixture ID in fixture.
+     *
+     */
     public void DeleteFixture(int FixtureID){
 
 
@@ -942,6 +1148,14 @@ public class DatabaseController {
 
     // Section for the session methods
 
+
+    /**
+     *
+     * Method for adding a session to the session table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param session the class used for holding session details.
+     */
     public void AddSession(Session session) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:simplyrugby.sqlite");
@@ -979,6 +1193,14 @@ public class DatabaseController {
     }
 
 
+    /**
+     *
+     * Method for viewing a session from the session table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param SessionID the variable used for holding the session ID in session.
+     * @return SessionSett - the session set.
+     */
     public String ViewSession(int SessionID){
         ResultSet SessionSet;
         String SessionSett ="";
@@ -1015,6 +1237,15 @@ public class DatabaseController {
         return SessionSett;
     }
 
+
+    /**
+     *
+     * Method for viewing a player's sessions from the session table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param TeamID the variable used for holding the team ID in Squad.
+     * @return SessionSett - the session set.
+     */
     public String ViewPlayersSession(int TeamID){
         ResultSet SessionSet;
         String SessionSett ="";
@@ -1052,6 +1283,13 @@ public class DatabaseController {
     }
 
 
+    /**
+     *
+     * Method for deleting a session from the session table.
+     * @author Bartlomiej Klich
+     * @version
+     * @param SessionId the variable used for holding the session ID in session.
+     */
     public void DeleteSession(int SessionId){
 
 

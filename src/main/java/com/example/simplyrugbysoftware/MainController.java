@@ -20,6 +20,13 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+/**
+ *
+ * MainController class, the class that is used to select scenes and hold the memberID.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ */
 
 public class MainController {
     private Stage stage;
@@ -37,6 +44,14 @@ public class MainController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for switching the scene to the coach scene
+    /**
+     *
+     * The method that is used to switch scenes to the coach scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneCoach(ActionEvent event) throws IOException {
 
         DatabaseController databaseController = new DatabaseController();
@@ -86,7 +101,14 @@ public class MainController {
 
 
     }
-
+    /**
+     *
+     * The method that is used to switch scenes to the secretary scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     //method for switching the scene to the secretary scene
     public void SwitchSceneSecretary(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("FixtureSecretary.fxml"));
@@ -96,6 +118,14 @@ public class MainController {
         stage.show();
     }
     //method for switching the scene to the member scene
+    /**
+     *
+     * The method that is used to switch scenes to the member scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMember(ActionEvent event) throws IOException {
 
         DatabaseController databaseController = new DatabaseController();

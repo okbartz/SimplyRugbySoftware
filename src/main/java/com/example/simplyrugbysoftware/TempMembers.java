@@ -1,5 +1,12 @@
 package com.example.simplyrugbysoftware;
-
+/**
+ *
+ * TempMembers class that inserts members, players, coaches, fixtures and sessions when run.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class TempMembers {
     public static void main(String[] args) {
 
