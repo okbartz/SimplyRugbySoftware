@@ -21,7 +21,13 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ *
+ * CoachController class, the class that is used to select scenes and hold the memberID.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ */
 public class CoachController {
     private Stage stage;
     private Scene scene;
@@ -54,7 +60,15 @@ public class CoachController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for setting the user
-
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         welcomeText.setText("Welcome, " + databaseController.ViewMember(CurrentUserID).getFname());
@@ -65,6 +79,14 @@ public class CoachController {
 
 
 //method for switching to the main menu scene
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -74,6 +96,14 @@ public class CoachController {
         stage.show();
     }
     //method for switching to the member menu scene
+    /**
+     *
+     * Method for switching scenes to the coach member scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMember(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachMemberMenu.fxml"));
@@ -91,6 +121,14 @@ public class CoachController {
 
     }
     //method for switching to the coach menu scene
+    /**
+     *
+     * Method for switching scenes to the coach coach scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneCoach(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachCoachMenu.fxml"));
@@ -109,6 +147,14 @@ public class CoachController {
     }
 
     //method for switching to the session menu scene
+    /**
+     *
+     * Method for switching scenes to the coach session scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneSession(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachSessionsMenu.fxml"));
@@ -126,6 +172,14 @@ public class CoachController {
 
     }
     //method for switching to the squad menu scene
+    /**
+     *
+     * Method for switching scenes to the coach squad scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneSquad(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachSquadMenu.fxml"));
@@ -143,6 +197,16 @@ public class CoachController {
 
     }
     //method for switching to the fixture menu scene
+
+
+    /**
+     *
+     * Method for switching scenes to the coach fixture scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneFixture(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachFixturesMenu.fxml"));
@@ -160,6 +224,14 @@ public class CoachController {
 
     }
     //method for switching to the player menu scene
+    /**
+     *
+     * Method for switching scenes to the coach player scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchScenePlayer(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CoachPlayerMenu.fxml"));

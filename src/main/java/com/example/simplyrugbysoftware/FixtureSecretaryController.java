@@ -1,13 +1,5 @@
 package com.example.simplyrugbysoftware;
 
-/*
-
-07/05/2023
-Simply Rugby Software
-Bartlomiej Klich
-
-*/
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +18,16 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+
+
+/**
+ *
+ * Fixture controller class, the class that controls the Fixture scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class FixtureSecretaryController {
     private Stage stage;
     private Scene scene;
@@ -90,6 +92,15 @@ public class FixtureSecretaryController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         welcomeText.setText("Welcome, " + databaseController.ViewMember(CurrentUserID).getFname());
@@ -97,6 +108,14 @@ public class FixtureSecretaryController {
     }
 
     //method for switching scenes to the main menu
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -107,18 +126,45 @@ public class FixtureSecretaryController {
     }
 
     //methods for opening the different panes
+    /**
+     *
+     * Method for opening the fixture pane(making the fixture pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void openFixtures(ActionEvent event) throws IOException {
         fixturesPane.setVisible(true);
         MemberPane1.setVisible(false);
         AddFixturePane.setVisible(false);
         RemoveFixturePane.setVisible(false);
     }
+    /**
+     *
+     * Method for opening the add fixture pane(making the add fixture pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void openAddFixtures(ActionEvent event) throws IOException {
         fixturesPane.setVisible(false);
         MemberPane1.setVisible(false);
         AddFixturePane.setVisible(true);
         RemoveFixturePane.setVisible(false);
     }
+    /**
+     *
+     * Method for opening the view members pane(making the view members pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void openViewMembers(ActionEvent event) throws IOException {
         fixturesPane.setVisible(false);
         MemberPane1.setVisible(true);
@@ -126,6 +172,15 @@ public class FixtureSecretaryController {
         RemoveFixturePane.setVisible(false);
     }
 
+    /**
+     *
+     * Method for opening the remove fixtures pane(making the remove fixtures pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void openRemoveFixtures(ActionEvent event) throws IOException {
         fixturesPane.setVisible(false);
         MemberPane1.setVisible(false);
@@ -134,6 +189,14 @@ public class FixtureSecretaryController {
     }
 
     //method for viewing the fixtures
+
+    /**
+     *
+     * Method for viewing fixtures using a team ID.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public void ViewFixtures(ActionEvent event) throws IOException {
 
     try {
@@ -151,6 +214,13 @@ public class FixtureSecretaryController {
 
     }
     //method for adding the fixtures
+    /**
+     *
+     * Method for adding fixtures to the fixtures table.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public void AddFixtures(ActionEvent event) throws IOException {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -172,6 +242,13 @@ public class FixtureSecretaryController {
 
     }
     //method for viewing the members
+    /**
+     *
+     * Method for viewing members.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public void ViewMembers(ActionEvent event) throws IOException {
 
         try {
@@ -188,6 +265,13 @@ public class FixtureSecretaryController {
         }
     }
     //method for removing the fixtures
+    /**
+     *
+     * Method for removing fixtures from the fixtures table.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public void RemoveFixture(ActionEvent event) throws IOException {
         try{
             databaseController.DeleteFixture(Integer.parseInt(removeFixtureInput.getText()));

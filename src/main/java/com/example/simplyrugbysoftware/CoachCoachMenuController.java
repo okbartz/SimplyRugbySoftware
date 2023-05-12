@@ -26,7 +26,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+/**
+ *
+ * CoachCoachMenuController class, the class that is used to interact with the coach database table.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ */
 public class CoachCoachMenuController {
     private Stage stage;
     private Scene scene;
@@ -93,6 +99,14 @@ public class CoachCoachMenuController {
     DatabaseController databaseController = new DatabaseController();
 
 // method for switching scenes to the coach choice menu
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -109,18 +123,39 @@ public class CoachCoachMenuController {
 
     }
 //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
 
     }
 
 //methods for opening different panes
+    /**
+     *
+     * Method for opening the view coach pane(making the view coach pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openViewCoach(ActionEvent event) throws IOException {
         AddCoachPane.setVisible(false);
         ViewCoachPane1.setVisible(true);
 //        RemoveCoachPane.setVisible(false);
         EditCoachPane.setVisible(false);
     }
+    /**
+     *
+     * Method for opening the add coach pane(making the add coach pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openAddCoach(ActionEvent event) throws IOException {
         AddCoachPane.setVisible(true);
         ViewCoachPane1.setVisible(false);
@@ -128,6 +163,12 @@ public class CoachCoachMenuController {
         EditCoachPane.setVisible(false);
 
     }
+    /**
+     *
+     * Method for opening the edit coach pane(making the edit coach pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openEditCoach(ActionEvent event) throws IOException {
         AddCoachPane.setVisible(false);
         ViewCoachPane1.setVisible(false);
@@ -136,18 +177,16 @@ public class CoachCoachMenuController {
 
 
     }
-    public void openRemoveCoach(ActionEvent event) throws IOException {
-        AddCoachPane.setVisible(false);
-        ViewCoachPane1.setVisible(false);
-        RemoveCoachPane.setVisible(true);
-        EditCoachPane.setVisible(false);
-
-
-    }
 
 
 
 //method for setting the inputs for the edit pane
+    /**
+     *
+     * Method for setting the edit inputs for the edit pane.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void SetEditInputs(KeyEvent event) throws IOException {
 
         System.out.println("inputing the members details");
@@ -183,6 +222,12 @@ public class CoachCoachMenuController {
 
     }
 //method for viewing all coaches
+    /**
+     *
+     * Method for viewing all coaches from the coaches table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewAll(ActionEvent event) throws IOException {
 
 
@@ -203,6 +248,12 @@ public class CoachCoachMenuController {
 
 
     //method for adding coaches
+    /**
+     *
+     * Method for adding coaches to the coaches table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void AddCoach(ActionEvent event) throws IOException {
 
         try {
@@ -224,6 +275,12 @@ public class CoachCoachMenuController {
 
     }
     //method for editing coaches
+    /**
+     *
+     * Method for editing coaches from the coaches table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void EditCoach(ActionEvent event) throws IOException {
 
         try {
@@ -241,6 +298,12 @@ public class CoachCoachMenuController {
 
     }
     //method for viewing coaches
+    /**
+     *
+     * Method for viewing coaches from the coaches table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewCoach(ActionEvent event) throws IOException {
 
         try{

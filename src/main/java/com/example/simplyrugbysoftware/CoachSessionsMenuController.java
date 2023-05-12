@@ -24,7 +24,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+/**
+ *
+ * Coach Session controller class, the class that controls the CoachSessionsMenu scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class CoachSessionsMenuController {
     private Stage stage;
     private Scene scene;
@@ -92,6 +99,14 @@ public class CoachSessionsMenuController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for switching to the coach choice menu scene.
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -108,6 +123,15 @@ public class CoachSessionsMenuController {
 
     }
     //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         InputActivity.getItems().addAll(options);
@@ -115,12 +139,24 @@ public class CoachSessionsMenuController {
     }
 
     //methods for opening the different panes
+    /**
+     *
+     * Method for opening the view session pane(making the view session pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openViewSession(ActionEvent event) throws IOException {
         AddSessionPane.setVisible(false);
         ViewSessionPane1.setVisible(true);
         RemoveSessionPane.setVisible(false);
 
     }
+    /**
+     *
+     * Method for opening the add session pane(making the add session pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openAddSession(ActionEvent event) throws IOException {
         AddSessionPane.setVisible(true);
         ViewSessionPane1.setVisible(false);
@@ -128,7 +164,12 @@ public class CoachSessionsMenuController {
 
 
     }
-
+    /**
+     *
+     * Method for opening the remove session pane(making the remove session pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openRemoveSession(ActionEvent event) throws IOException {
         AddSessionPane.setVisible(false);
         ViewSessionPane1.setVisible(false);
@@ -138,6 +179,12 @@ public class CoachSessionsMenuController {
     }
 
     //method for adding sessions
+    /**
+     *
+     * Method for adding sessions to the session table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void AddSession(ActionEvent event) throws IOException {
 
         try {
@@ -160,6 +207,12 @@ public class CoachSessionsMenuController {
 
     }
     //method for viewing sessions
+    /**
+     *
+     * Method for viewing sessions from the session table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewSession(ActionEvent event) throws IOException {
 
         try{
@@ -176,6 +229,12 @@ public class CoachSessionsMenuController {
 
     }
     //method for removing sessions
+    /**
+     *
+     * Method for removing sessions from the session table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void RemoveSessions(ActionEvent event) throws IOException {
         try{
         databaseController.DeleteSession(Integer.parseInt(RemoveSessionInput.getText()));

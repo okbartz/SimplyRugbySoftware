@@ -21,7 +21,14 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ *
+ * Coach Squad controller class, the class that controls the CoachSquadMenu scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class CoachSquadMenuController {
     private Stage stage;
     private Scene scene;
@@ -81,6 +88,14 @@ public class CoachSquadMenuController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for switching to the coach choice menu scene.
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -97,6 +112,15 @@ public class CoachSquadMenuController {
 
     }
     //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         InputAgegrade1.getItems().addAll(ageGrades);
@@ -105,12 +129,24 @@ public class CoachSquadMenuController {
     }
 
     //methods for opening the different panes
+    /**
+     *
+     * Method for opening the view squad pane(making the view squad pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openViewSquad(ActionEvent event) throws IOException {
         AddSquadPane.setVisible(false);
         ViewSquadPane1.setVisible(true);
         RemoveSquadPane.setVisible(false);
         EditSquadPane.setVisible(false);
     }
+    /**
+     *
+     * Method for opening the add squad pane(making the add squad pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openAddSquad(ActionEvent event) throws IOException {
         AddSquadPane.setVisible(true);
         ViewSquadPane1.setVisible(false);
@@ -118,6 +154,12 @@ public class CoachSquadMenuController {
         EditSquadPane.setVisible(false);
 
     }
+    /**
+     *
+     * Method for opening the edit squad pane(making the edit squad pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openEditSquad(ActionEvent event) throws IOException {
         AddSquadPane.setVisible(false);
         ViewSquadPane1.setVisible(false);
@@ -126,6 +168,12 @@ public class CoachSquadMenuController {
 
 
     }
+    /**
+     *
+     * Method for opening the remove squad pane(making the remove squad pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openRemoveSquad(ActionEvent event) throws IOException {
         AddSquadPane.setVisible(false);
         ViewSquadPane1.setVisible(false);
@@ -139,6 +187,12 @@ public class CoachSquadMenuController {
 
 
 //method for adding a squad
+    /**
+     *
+     * Method for adding squads to the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void AddSquad(ActionEvent event) throws IOException {
 
         try {
@@ -160,6 +214,12 @@ public class CoachSquadMenuController {
 
     }
     //method for editing a squad
+    /**
+     *
+     * Method for editing squads from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void EditSquad(ActionEvent event) throws IOException {
 
         try {
@@ -177,6 +237,12 @@ public class CoachSquadMenuController {
 
     }
     //method for viewing a squad
+    /**
+     *
+     * Method for viewing squads from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewSquad(ActionEvent event) throws IOException {
 
         try{
@@ -193,6 +259,12 @@ public class CoachSquadMenuController {
 
     }
     //method for viewing all squad
+    /**
+     *
+     * Method for viewing all squads from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewAll(ActionEvent event) throws IOException {
 
 
@@ -211,6 +283,12 @@ public class CoachSquadMenuController {
 
     }
     //method for removing a squad
+    /**
+     *
+     * Method for removing squads from the squad table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void RemoveSquad(ActionEvent event) throws IOException {
         try{
             databaseController.DeleteSquad(Integer.parseInt(RemoveSquadInput.getText()));

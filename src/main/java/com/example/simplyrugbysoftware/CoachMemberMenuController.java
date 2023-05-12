@@ -24,7 +24,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+/**
+ *
+ * Coach Member controller class, the class that controls the CoachMemberMenu scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class CoachMemberMenuController {
     private Stage stage;
     private Scene scene;
@@ -95,6 +102,14 @@ public class CoachMemberMenuController {
     DatabaseController databaseController = new DatabaseController();
 
 //method for switching scenes to the coach choice menu
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -111,6 +126,15 @@ public class CoachMemberMenuController {
 
     }
 //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         InputSex.getItems().addAll(sexes);
@@ -118,12 +142,24 @@ public class CoachMemberMenuController {
     }
 
 //methods for opening the different panes
+    /**
+     *
+     * Method for opening the view member pane(making the view member pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openViewMember(ActionEvent event) throws IOException {
         AddMemberPane.setVisible(false);
         ViewMemberPane1.setVisible(true);
         RemoveMemberPane.setVisible(false);
         EditMemberPane.setVisible(false);
     }
+    /**
+     *
+     * Method for opening the add member pane(making the add member pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openAddMember(ActionEvent event) throws IOException {
         AddMemberPane.setVisible(true);
         ViewMemberPane1.setVisible(false);
@@ -131,6 +167,12 @@ public class CoachMemberMenuController {
         EditMemberPane.setVisible(false);
 
     }
+    /**
+     *
+     * Method for opening the edit member pane(making the edit member pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openEditMember(ActionEvent event) throws IOException {
         AddMemberPane.setVisible(false);
         ViewMemberPane1.setVisible(false);
@@ -138,6 +180,12 @@ public class CoachMemberMenuController {
         EditMemberPane.setVisible(true);
 
     }
+    /**
+     *
+     * Method for opening the remove member pane(making the remove member pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openRemoveMember(ActionEvent event) throws IOException {
         AddMemberPane.setVisible(false);
         ViewMemberPane1.setVisible(false);
@@ -149,6 +197,12 @@ public class CoachMemberMenuController {
 
 
 //method for setting the edit pane inputs
+    /**
+     *
+     * Method for setting the edit inputs for the edit pane.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void SetEditInputs(KeyEvent event) throws IOException {
 
         System.out.println("inputing the members details");
@@ -197,6 +251,12 @@ public class CoachMemberMenuController {
     }
 
     //method for adding members
+    /**
+     *
+     * Method for adding members to the member table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void AddMember(ActionEvent event) throws IOException {
 
         try {
@@ -221,6 +281,12 @@ public class CoachMemberMenuController {
 
     }
     //method for editing members
+    /**
+     *
+     * Method for editing members from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void EditMember(ActionEvent event) throws IOException {
 
         try {
@@ -242,6 +308,12 @@ public class CoachMemberMenuController {
 
     }
     //method for viewing all members
+    /**
+     *
+     * Method for viewing all members from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewAll(ActionEvent event) throws IOException {
 
 
@@ -261,6 +333,12 @@ public class CoachMemberMenuController {
     }
 
     //method for viewing members
+    /**
+     *
+     * Method for viewing members from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewMembers(ActionEvent event) throws IOException {
 
         try{
@@ -277,6 +355,12 @@ public class CoachMemberMenuController {
 
     }
     //method for removing members
+    /**
+     *
+     * Method for removing members from the member table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void RemoveMembers(ActionEvent event) throws IOException {
         try{
         databaseController.RemoveMember(Integer.parseInt(RemoveMemberInput.getText()));

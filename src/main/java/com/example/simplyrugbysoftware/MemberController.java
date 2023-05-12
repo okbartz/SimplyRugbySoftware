@@ -1,13 +1,5 @@
 package com.example.simplyrugbysoftware;
 
-/*
-
-07/05/2023
-Simply Rugby Software
-Bartlomiej Klich
-
-*/
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +15,14 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ *
+ * Member controller class, the class that controls the Member scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class MemberController {
     private Stage stage;
     private Scene scene;
@@ -57,6 +56,15 @@ public class MemberController {
 
 
     //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
         welcomeText.setText("Welcome, " + databaseController.ViewMember(CurrentUserID).getFname());
@@ -64,6 +72,14 @@ public class MemberController {
     }
 
     //method for switching the scene to the main menu
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -74,6 +90,15 @@ public class MemberController {
     }
 
     //method for viewing the session for the member
+    /**
+     *
+     * Method for viewing current members sessions.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void ViewSesh(ActionEvent event) throws IOException {
 
 
@@ -88,6 +113,15 @@ public class MemberController {
 
     }
     //method for viewing the sessions of the member
+    /**
+     *
+     * Method for viewing current members fixtures.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void ViewFixt(ActionEvent event) throws IOException {
 
         System.out.println("current memberid = " + CurrentUserID);
@@ -102,6 +136,15 @@ public class MemberController {
     }
 
     //method for opening the consent pane
+    /**
+     *
+     * Method for opening the consent pane (making it visible).
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     *
+     */
     public void openConsent(ActionEvent event) throws IOException {
 
         consentPane.setVisible(true);
@@ -111,6 +154,13 @@ public class MemberController {
     }
 
     //method for setting the consent to true
+    /**
+     *
+     * Method for setting the consent of the member to true.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public void setConsent(ActionEvent event) throws IOException {
 
        Player playerconsent = databaseController.ViewPlayer(CurrentUserID);

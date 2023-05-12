@@ -24,6 +24,14 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ *
+ * Coach Fixture controller class, the class that controls the CoachFixturesMenu scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class CoachFixturesMenuController {
     private Stage stage;
     private Scene scene;
@@ -49,6 +57,14 @@ public class CoachFixturesMenuController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for switching back to the coach choice menu
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -65,6 +81,15 @@ public class CoachFixturesMenuController {
 
     }
     //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
 
@@ -73,6 +98,13 @@ public class CoachFixturesMenuController {
 
 
     //method for viewing fixtures
+    /**
+     *
+     * Method for viewing fixtures using a team ID.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     */
     public void ViewFixture(ActionEvent event) throws IOException {
 
         try{

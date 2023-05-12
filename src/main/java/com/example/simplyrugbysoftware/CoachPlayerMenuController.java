@@ -27,7 +27,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+/**
+ *
+ * Coach Player controller class, the class that controls the CoachPlayerMenu scene.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class CoachPlayerMenuController {
     private Stage stage;
     private Scene scene;
@@ -101,6 +108,14 @@ public class CoachPlayerMenuController {
     DatabaseController databaseController = new DatabaseController();
 
     //method for switching to the coach choice menu scene.
+    /**
+     *
+     * Method for switching scenes to the main scene.
+     * @author Bartlomiej Klich
+     * @version
+     *
+     *
+     */
     public void SwitchSceneMain(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Coach1.fxml"));
@@ -117,18 +132,39 @@ public class CoachPlayerMenuController {
 
     }
 //method for setting the user
+    /**
+     *
+     * Method for setting current users, user id.
+     * @author Bartlomiej Klich
+     * @version
+     * @param UserID the variable used for holding the user id.
+     *
+     *
+     */
     public void setUser(int UserID) {
         CurrentUserID = UserID;
 
     }
 
 //methods for opening the different panes
+    /**
+     *
+     * Method for opening the view player pane(making the view player pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openViewPlayer(ActionEvent event) throws IOException {
         AddPlayerPane.setVisible(false);
         ViewPlayerPane1.setVisible(true);
 
         EditPlayerPane.setVisible(false);
     }
+    /**
+     *
+     * Method for opening the add player pane(making the add player pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openAddPlayer(ActionEvent event) throws IOException {
         AddPlayerPane.setVisible(true);
         ViewPlayerPane1.setVisible(false);
@@ -136,6 +172,12 @@ public class CoachPlayerMenuController {
         EditPlayerPane.setVisible(false);
 
     }
+    /**
+     *
+     * Method for opening the edit player pane(making the edit player pane visible and the other panes to invisible).
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void openEditPlayer(ActionEvent event) throws IOException {
         AddPlayerPane.setVisible(false);
         ViewPlayerPane1.setVisible(false);
@@ -148,6 +190,12 @@ public class CoachPlayerMenuController {
 
 
 //method for setting the edit inputs for the edit pane
+    /**
+     *
+     * Method for setting the edit inputs for the edit pane.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void SetEditInputs(KeyEvent event) throws IOException {
 
         System.out.println("inputing the Players details");
@@ -200,6 +248,12 @@ public class CoachPlayerMenuController {
     }
 
 //method for adding players
+    /**
+     *
+     * Method for adding players to the player table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void AddPlayer(ActionEvent event) throws IOException {
 
         try {
@@ -218,6 +272,12 @@ public class CoachPlayerMenuController {
 
     }
     //method for editing players
+    /**
+     *
+     * Method for editing players from the player table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void EditPlayer(ActionEvent event) throws IOException {
 
         try {
@@ -238,6 +298,12 @@ public class CoachPlayerMenuController {
 
     }
     //method for viewing players
+    /**
+     *
+     * Method for viewing players from the player table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewPlayers(ActionEvent event) throws IOException {
 
         try{
@@ -277,6 +343,12 @@ public class CoachPlayerMenuController {
 
     }
     //method for viewing all players
+    /**
+     *
+     * Method for viewing all players from the player table.
+     * @author Bartlomiej Klich
+     * @version
+     */
     public void ViewAll(ActionEvent event) throws IOException {
 
 
