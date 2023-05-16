@@ -75,7 +75,7 @@ public class Squad {
                 throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the team id cannot be less than 1");
+            throw new Exception("the team id cannot be less than 0");
         }
     }
     /**

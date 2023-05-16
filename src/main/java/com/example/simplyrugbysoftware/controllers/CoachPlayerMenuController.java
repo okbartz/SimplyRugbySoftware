@@ -1,4 +1,4 @@
-package com.example.simplyrugbysoftware;
+package com.example.simplyrugbysoftware.controllers;
 /*
 
 07/05/2023
@@ -6,17 +6,16 @@ Simply Rugby Software
 Bartlomiej Klich
 
 */
+import com.example.simplyrugbysoftware.DatabaseController;
+import com.example.simplyrugbysoftware.Player;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Side;
-import javafx.scene.Camera;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.Chart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
@@ -25,8 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 /**
  *
  * Coach Player controller class, the class that controls the CoachPlayerMenu scene.

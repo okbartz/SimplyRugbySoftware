@@ -83,7 +83,7 @@ public class Coach {
             }
         }catch (Exception e){
 
-            throw new Exception("the member id cannot be less than 1");
+            throw new Exception("the member id cannot be less than 0");
         }
     }
     /**
@@ -150,7 +150,7 @@ public class Coach {
                 throw new Exception();
             }
         }catch (Exception e){
-            throw new Exception("the coach id cannot be less than 1");
+            throw new Exception("the coach id cannot be less than 0");
         }
     }
 

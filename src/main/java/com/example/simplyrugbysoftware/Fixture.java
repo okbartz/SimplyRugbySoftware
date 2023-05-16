@@ -185,7 +185,7 @@ public class Fixture {
 
         try {
 
-            if (playingField.matches("\\D*")){
+            if (playingField.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
             PlayingField = playingField.toUpperCase();}
             else {throw new Exception();}
 

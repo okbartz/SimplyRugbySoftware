@@ -1,4 +1,4 @@
-package com.example.simplyrugbysoftware;
+package com.example.simplyrugbysoftware.controllers;
 /*
 
 07/05/2023
@@ -6,6 +6,8 @@ Simply Rugby Software
 Bartlomiej Klich
 
 */
+import com.example.simplyrugbysoftware.DatabaseController;
+import com.example.simplyrugbysoftware.Member;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

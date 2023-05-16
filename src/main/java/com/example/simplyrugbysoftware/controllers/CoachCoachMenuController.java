@@ -1,4 +1,4 @@
-package com.example.simplyrugbysoftware;
+package com.example.simplyrugbysoftware.controllers;
 
 /*
 
@@ -8,14 +8,14 @@ Bartlomiej Klich
 
 */
 
+import com.example.simplyrugbysoftware.Coach;
+import com.example.simplyrugbysoftware.DatabaseController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -24,8 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 /**
  *
  * CoachCoachMenuController class, the class that is used to interact with the coach database table.

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.CoachController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simplyrugbysoftware.controllers.CoachController">
    <children>
       <Button fx:id="backBtn" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#SwitchSceneMain" style="-fx-background-color: DAE8FC; -fx-border-color: black;" text="Back" />
       <Text fx:id="welcomeText" layoutX="272.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, " />

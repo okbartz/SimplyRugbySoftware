@@ -2,7 +2,7 @@ package com.example.simplyrugbysoftware;
 import java.sql.*;
 /**
  *
- * Squad class, the class that holds squad details.
+ * DatabaseController class, the class that controls the sqlite database.
  * @author Bartlomiej Klich
  * @version
  *

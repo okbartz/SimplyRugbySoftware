@@ -7,4 +7,8 @@ module com.example.simplyrugbysoftware {
 
     opens com.example.simplyrugbysoftware to javafx.fxml;
     exports com.example.simplyrugbysoftware;
+    exports com.example.simplyrugbysoftware.controllers;
+    opens com.example.simplyrugbysoftware.controllers to javafx.fxml;
+    exports com.example.simplyrugbysoftware.tests;
+    opens com.example.simplyrugbysoftware.tests to javafx.fxml;
 }

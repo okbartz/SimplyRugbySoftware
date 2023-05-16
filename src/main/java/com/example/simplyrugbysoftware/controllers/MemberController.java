@@ -1,5 +1,8 @@
-package com.example.simplyrugbysoftware;
+package com.example.simplyrugbysoftware.controllers;
 
+import com.example.simplyrugbysoftware.DatabaseController;
+import com.example.simplyrugbysoftware.Member;
+import com.example.simplyrugbysoftware.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

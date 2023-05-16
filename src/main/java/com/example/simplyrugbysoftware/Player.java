@@ -133,7 +133,7 @@ public class Player {
             }
         }catch (Exception e){
 
-            throw new Exception("the member id cannot be less than 1");
+            throw new Exception("the member id cannot be less than 0");
         }
     }
     /**
