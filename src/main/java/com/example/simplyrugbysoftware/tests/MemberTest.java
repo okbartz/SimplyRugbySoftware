@@ -4,7 +4,14 @@ import com.example.simplyrugbysoftware.Member;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ *
+ * Member test class, the class that tests the Member class.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class MemberTest {
 
     @Test

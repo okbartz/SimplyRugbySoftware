@@ -97,11 +97,11 @@ public class Player {
         try {
 
             fieldPosition.toUpperCase();
-            if (fieldPosition.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")){
+            if (fieldPosition.matches("^[a-zA-Z0-9 -]*$")){
                 FieldPosition = fieldPosition;} else {throw new Exception();}
         }catch (Exception e){
 
-            throw new Exception("the Field Position can only be letters!!");
+            throw new Exception("the Field Position can only be letters, the character '-' and numbers!!");
         }
 
 

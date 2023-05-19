@@ -13,15 +13,16 @@ public class TempMembers {
         Member member = new Member("jim","jones","M","donkey@21.com","g23 4dq",1,"11/06/2020");
         Player player1 = new Player("Rear",1,1,10,10,10,10,10,false);
 
+        Squad squad = new Squad(1,"U9");
 
-
-        Member member1 = new Member("wee","james","F","donkey@21.com","g23 4dq",0,"11/06/2020");
+        Member member1 = new Member("jones","james","M","donkey@21.com","g23 4dq",0,"11/06/2020");
         Coach coach = new Coach(2,1,0);
         Coach coach1 = new Coach(2,2,0);
 
 
         DatabaseController databaseController = new DatabaseController();
 
+        databaseController.AddSquad(squad);
         databaseController.AddMember(member);
         databaseController.AddPlayer(player1);
 

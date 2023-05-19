@@ -5,7 +5,14 @@ import com.example.simplyrugbysoftware.Player;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ *
+ * Player test class, the class that tests the Player class.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class PlayerTest {
 
     @Test

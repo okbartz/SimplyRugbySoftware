@@ -4,7 +4,14 @@ import com.example.simplyrugbysoftware.Squad;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ *
+ * Squad test class, the class that tests the Squad class.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class SquadTest {
 
     @Test

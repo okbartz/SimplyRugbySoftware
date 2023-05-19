@@ -5,7 +5,14 @@ import com.example.simplyrugbysoftware.Session;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ *
+ * Session test class, the class that tests the Session class.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class SessionTest {
 
     @Test

@@ -5,7 +5,18 @@ import com.example.simplyrugbysoftware.Member;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import com.example.simplyrugbysoftware.Coach;
+import org.junit.Test;
 
+import static org.junit.Assert.*;
+/**
+ *
+ * Fixture test class, the class that tests the Fixture class.
+ * @author Bartlomiej Klich
+ * @version
+ *
+ *
+ */
 public class FixtureTest {
 
     @Test
